@@ -26,6 +26,7 @@ class ViewController: UIViewController {
 
     }
     @IBAction func BtnLoginClicked(_ sender: Any) {
+        performSegue(withIdentifier: "Home", sender: sender)
         
     }
     

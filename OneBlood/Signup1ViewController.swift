@@ -16,6 +16,7 @@ class Signup1ViewController: UIViewController {
         // Do any additional setup after loading the view.
         let setGif = UIImage.gifImageWithName("userlogin")
         gifimage.image = setGif
+        
     }
     
 

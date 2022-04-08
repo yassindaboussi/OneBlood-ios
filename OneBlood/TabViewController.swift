@@ -1,26 +1,20 @@
 //
-//  ConditionViewController.swift
+//  TabViewController.swift
 //  OneBlood
 //
-//  Created by Apple Esprit on 8/4/2022.
+//  Created by Mac-Mini-2021 on 08/04/2022.
 //
 
 import UIKit
 
-class ConditionViewController: UIViewController {
+class TabViewController: UITabBarController {
 
-    @IBOutlet weak var CheckCondition: UISwitch!
-    @IBOutlet weak var BtnNext: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        BtnNext.layer.cornerRadius = 10
+        self.navigationItem .setHidesBackButton(true, animated: false)
+        self.navigationItem.backBarButtonItem?.title=""
 
         // Do any additional setup after loading the view.
-    }
-    @IBAction func GoToSignUp1(_ sender: Any) {
-        if CheckCondition.isOn {
-            performSegue(withIdentifier: "SignUp1", sender: sender)
-        }
     }
     
 
