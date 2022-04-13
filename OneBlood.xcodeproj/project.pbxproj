@@ -14,6 +14,11 @@
 		73162CC028002B9E002C7B66 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73162CBF28002B9E002C7B66 /* HomeViewController.swift */; };
 		73162CC3280030F1002C7B66 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73162CC2280030F1002C7B66 /* TabViewController.swift */; };
 		73162CC6280045E4002C7B66 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73162CC5280045E4002C7B66 /* SettingViewController.swift */; };
+		733A76982806219200EAE5F8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733A76972806219200EAE5F8 /* User.swift */; };
+		733A769E28062A5F00EAE5F8 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733A769D28062A5F00EAE5F8 /* Parser.swift */; };
+		733A76A9280635C500EAE5F8 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733A76A8280635C500EAE5F8 /* ApiService.swift */; };
+		733A76AC280637B800EAE5F8 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733A76AB280637B800EAE5F8 /* AuthResponse.swift */; };
+		733A76B028063EEF00EAE5F8 /* UIContollerAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733A76AF28063EEF00EAE5F8 /* UIContollerAlert.swift */; };
 		7383DA3327FF2D4B00C18202 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7383DA3227FF2D4B00C18202 /* AppDelegate.swift */; };
 		7383DA3527FF2D4B00C18202 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7383DA3427FF2D4B00C18202 /* SceneDelegate.swift */; };
 		7383DA3727FF2D4B00C18202 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7383DA3627FF2D4B00C18202 /* ViewController.swift */; };
@@ -23,6 +28,8 @@
 		7383DA4227FF2D5500C18202 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7383DA4027FF2D5500C18202 /* LaunchScreen.storyboard */; };
 		7383DA4B27FF36E400C18202 /* lottieblood.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7383DA4A27FF36E400C18202 /* lottieblood.gif */; };
 		7383DA4E27FF375700C18202 /* lottieGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7383DA4D27FF375700C18202 /* lottieGif.swift */; };
+		7388016F2806C198008024BB /* ProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7388016E2806C198008024BB /* ProfilViewController.swift */; };
+		738801772806FA9D008024BB /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 738801762806FA9D008024BB /* NetworkExtension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +40,11 @@
 		73162CBF28002B9E002C7B66 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		73162CC2280030F1002C7B66 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		73162CC5280045E4002C7B66 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		733A76972806219200EAE5F8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		733A769D28062A5F00EAE5F8 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		733A76A8280635C500EAE5F8 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		733A76AB280637B800EAE5F8 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
+		733A76AF28063EEF00EAE5F8 /* UIContollerAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIContollerAlert.swift; sourceTree = "<group>"; };
 		7383DA2F27FF2D4B00C18202 /* OneBlood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneBlood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7383DA3227FF2D4B00C18202 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7383DA3427FF2D4B00C18202 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +56,9 @@
 		7383DA4327FF2D5500C18202 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7383DA4A27FF36E400C18202 /* lottieblood.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = lottieblood.gif; sourceTree = "<group>"; };
 		7383DA4D27FF375700C18202 /* lottieGif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lottieGif.swift; sourceTree = "<group>"; };
+		7388016E2806C198008024BB /* ProfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilViewController.swift; sourceTree = "<group>"; };
+		738801742806FA9D008024BB /* OneBlood.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OneBlood.entitlements; sourceTree = "<group>"; };
+		738801762806FA9D008024BB /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,17 +66,60 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				738801772806FA9D008024BB /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		733A76962806216200EAE5F8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				733A76972806219200EAE5F8 /* User.swift */,
+				733A76AB280637B800EAE5F8 /* AuthResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		733A769B2806291500EAE5F8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		733A769C28062A3100EAE5F8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				733A769D28062A5F00EAE5F8 /* Parser.swift */,
+				733A76A8280635C500EAE5F8 /* ApiService.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		733A76A128062C0700EAE5F8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7383DA3627FF2D4B00C18202 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		733A76AE28063EA600EAE5F8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				733A76AF28063EEF00EAE5F8 /* UIContollerAlert.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		7383DA2627FF2D4A00C18202 = {
 			isa = PBXGroup;
 			children = (
 				7383DA3127FF2D4B00C18202 /* OneBlood */,
 				7383DA3027FF2D4B00C18202 /* Products */,
+				738801752806FA9D008024BB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,9 +134,14 @@
 		7383DA3127FF2D4B00C18202 /* OneBlood */ = {
 			isa = PBXGroup;
 			children = (
+				738801742806FA9D008024BB /* OneBlood.entitlements */,
+				733A76AE28063EA600EAE5F8 /* Extensions */,
+				733A76A128062C0700EAE5F8 /* Controller */,
+				733A769C28062A3100EAE5F8 /* ViewModel */,
+				733A769B2806291500EAE5F8 /* Services */,
+				733A76962806216200EAE5F8 /* Models */,
 				7383DA3227FF2D4B00C18202 /* AppDelegate.swift */,
 				7383DA3427FF2D4B00C18202 /* SceneDelegate.swift */,
-				7383DA3627FF2D4B00C18202 /* ViewController.swift */,
 				7383DA4A27FF36E400C18202 /* lottieblood.gif */,
 				7383DA3827FF2D4B00C18202 /* Main.storyboard */,
 				7383DA3E27FF2D5500C18202 /* Assets.xcassets */,
@@ -93,8 +156,17 @@
 				73162CBF28002B9E002C7B66 /* HomeViewController.swift */,
 				73162CC2280030F1002C7B66 /* TabViewController.swift */,
 				73162CC5280045E4002C7B66 /* SettingViewController.swift */,
+				7388016E2806C198008024BB /* ProfilViewController.swift */,
 			);
 			path = OneBlood;
+			sourceTree = "<group>";
+		};
+		738801752806FA9D008024BB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				738801762806FA9D008024BB /* NetworkExtension.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,15 +242,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				0806634B27FFAFDF002B717E /* ConditionViewController.swift in Sources */,
+				7388016F2806C198008024BB /* ProfilViewController.swift in Sources */,
 				73162CC6280045E4002C7B66 /* SettingViewController.swift in Sources */,
 				7383DA4E27FF375700C18202 /* lottieGif.swift in Sources */,
 				7383DA3727FF2D4B00C18202 /* ViewController.swift in Sources */,
+				733A769E28062A5F00EAE5F8 /* Parser.swift in Sources */,
 				7383DA3327FF2D4B00C18202 /* AppDelegate.swift in Sources */,
 				0806634D27FFB002002B717E /* Signup1ViewController.swift in Sources */,
 				73162CC028002B9E002C7B66 /* HomeViewController.swift in Sources */,
 				0806634F27FFB19D002B717E /* SignUp2ViewController.swift in Sources */,
+				733A76B028063EEF00EAE5F8 /* UIContollerAlert.swift in Sources */,
+				733A76982806219200EAE5F8 /* User.swift in Sources */,
 				7383DA3527FF2D4B00C18202 /* SceneDelegate.swift in Sources */,
 				73162CC3280030F1002C7B66 /* TabViewController.swift in Sources */,
+				733A76A9280635C500EAE5F8 /* ApiService.swift in Sources */,
+				733A76AC280637B800EAE5F8 /* AuthResponse.swift in Sources */,
 				7383DA3D27FF2D4B00C18202 /* OneBlood.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,6 +404,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = OneBlood/OneBlood.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = OneBlood/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -344,6 +423,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = OneBlood/OneBlood.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = OneBlood/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
