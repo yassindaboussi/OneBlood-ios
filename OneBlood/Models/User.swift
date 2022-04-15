@@ -8,13 +8,13 @@
 import Foundation
 
 struct User: Decodable {
-    let id : String
-    let name, email, blood: String
-    let age: Int
-    let weight , adress : String
-    let phone : Int
-    let usertype, avatar: String
-    let token : String
+    var id : String
+    var name, email, blood: String
+    var age: Int
+    var weight , adress : String
+    var phone : Int
+    var usertype, avatar: String
+    var token : String
 }
 
 

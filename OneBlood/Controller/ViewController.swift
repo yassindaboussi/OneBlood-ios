@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
    
@@ -89,8 +90,8 @@ class ViewController: UIViewController {
                         }else if status == 200 {
                             
                             print("++++++++++++++++++++++name++++++++++++++++++"+self.connectedUser.name)
-                            //print(self.response)
-                          //  self.saveConnectedUser()
+                            print(self.connectedUser)
+                           self.saveConnectedUser()
                             self.performSegue(withIdentifier: "Home", sender:sender)
                         }
                         
@@ -99,7 +100,7 @@ class ViewController: UIViewController {
             }.resume()
     }
     }
-    /*
+    
     func saveConnectedUser() -> Void {
         
         let appD = UIApplication.shared.delegate as! AppDelegate
@@ -108,14 +109,16 @@ class ViewController: UIViewController {
         let entity = NSEntityDescription.entity(forEntityName: "Connected",in: managedContext)!
         let object = NSManagedObject(entity: entity,insertInto: managedContext)
         
-        object.setValue(self.connectedUser._id, forKey: "id")
-        object.setValue(self.connectedUser.firstName, forKey: "firstName")
-        object.setValue(self.connectedUser.lastName, forKey: "lastName")
+        object.setValue(self.connectedUser.id, forKey: "id")
+        object.setValue(self.connectedUser.name, forKey: "name")
+        object.setValue(self.connectedUser.adress, forKey: "adress")
         object.setValue(self.connectedUser.email, forKey: "email")
-        object.setValue(self.connectedUser.password, forKey: "password")
+        object.setValue(self.connectedUser.blood, forKey: "bloodtype")
         object.setValue(self.connectedUser.phone, forKey: "phone")
-        object.setValue(self.connectedUser.sexe, forKey: "sexe")
+        object.setValue(self.connectedUser.usertype, forKey: "usertype")
         object.setValue(self.connectedUser.avatar, forKey: "avatar")
+        object.setValue(self.connectedUser.age, forKey: "age")
+        object.setValue(self.connectedUser.token, forKey: "token")
                 
         
         do {
@@ -123,7 +126,7 @@ class ViewController: UIViewController {
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
-    }*/
+    }
         
     
     

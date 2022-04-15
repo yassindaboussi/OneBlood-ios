@@ -21,6 +21,10 @@ class ConditionViewController: UIViewController {
         if CheckCondition.isOn {
             performSegue(withIdentifier: "SignUp1", sender: sender)
         }
+        else{
+            CheckCondition.shake()
+        }
+            
     }
     
 

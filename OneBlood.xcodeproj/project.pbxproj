@@ -30,6 +30,8 @@
 		7383DA4E27FF375700C18202 /* lottieGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7383DA4D27FF375700C18202 /* lottieGif.swift */; };
 		7388016F2806C198008024BB /* ProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7388016E2806C198008024BB /* ProfilViewController.swift */; };
 		738801772806FA9D008024BB /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 738801762806FA9D008024BB /* NetworkExtension.framework */; };
+		E4CDC28C2809A67100E0E07D /* shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CDC28B2809A67100E0E07D /* shake.swift */; };
+		E4CDC28E2809B66600E0E07D /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CDC28D2809B66600E0E07D /* UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,8 @@
 		7388016E2806C198008024BB /* ProfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilViewController.swift; sourceTree = "<group>"; };
 		738801742806FA9D008024BB /* OneBlood.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OneBlood.entitlements; sourceTree = "<group>"; };
 		738801762806FA9D008024BB /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		E4CDC28B2809A67100E0E07D /* shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shake.swift; sourceTree = "<group>"; };
+		E4CDC28D2809B66600E0E07D /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 		733A76A128062C0700EAE5F8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				73162CBF28002B9E002C7B66 /* HomeViewController.swift */,
 				7383DA3627FF2D4B00C18202 /* ViewController.swift */,
 			);
 			path = Controller;
@@ -110,6 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				733A76AF28063EEF00EAE5F8 /* UIContollerAlert.swift */,
+				E4CDC28B2809A67100E0E07D /* shake.swift */,
+				E4CDC28D2809B66600E0E07D /* UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -153,7 +160,6 @@
 				0806634C27FFB002002B717E /* Signup1ViewController.swift */,
 				0806634E27FFB19D002B717E /* SignUp2ViewController.swift */,
 				0806635027FFB44E002B717E /* userlogin.gif */,
-				73162CBF28002B9E002C7B66 /* HomeViewController.swift */,
 				73162CC2280030F1002C7B66 /* TabViewController.swift */,
 				73162CC5280045E4002C7B66 /* SettingViewController.swift */,
 				7388016E2806C198008024BB /* ProfilViewController.swift */,
@@ -243,11 +249,13 @@
 			files = (
 				0806634B27FFAFDF002B717E /* ConditionViewController.swift in Sources */,
 				7388016F2806C198008024BB /* ProfilViewController.swift in Sources */,
+				E4CDC28C2809A67100E0E07D /* shake.swift in Sources */,
 				73162CC6280045E4002C7B66 /* SettingViewController.swift in Sources */,
 				7383DA4E27FF375700C18202 /* lottieGif.swift in Sources */,
 				7383DA3727FF2D4B00C18202 /* ViewController.swift in Sources */,
 				733A769E28062A5F00EAE5F8 /* Parser.swift in Sources */,
 				7383DA3327FF2D4B00C18202 /* AppDelegate.swift in Sources */,
+				E4CDC28E2809B66600E0E07D /* UIColor.swift in Sources */,
 				0806634D27FFB002002B717E /* Signup1ViewController.swift in Sources */,
 				73162CC028002B9E002C7B66 /* HomeViewController.swift in Sources */,
 				0806634F27FFB19D002B717E /* SignUp2ViewController.swift in Sources */,
