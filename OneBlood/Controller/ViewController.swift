@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     public var connectedUser:User = User(id: "", name: "", email: "", blood: "", age: 0, weight: "" , adress: "", phone: 0, usertype: "", avatar: "", token: "")
     public var response:AuthResponse = AuthResponse( error: "")
     
+    
     @IBOutlet weak var eyeicon: UIButton!
     @IBOutlet weak var eyePassword: UIImageView!
     @IBOutlet weak var txtPassword: UITextField!
@@ -30,6 +31,8 @@ class ViewController: UIViewController {
         GifLogin.image = setGif
         ///
         btnLogin.layer.cornerRadius = 10
+        self.navigationItem .setHidesBackButton(true, animated: false)
+        self.navigationItem.backBarButtonItem?.title=""
 
     }
 

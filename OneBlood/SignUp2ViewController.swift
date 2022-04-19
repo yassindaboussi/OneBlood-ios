@@ -11,25 +11,36 @@ class SignUp2ViewController: UIViewController {
     @IBOutlet weak var BloodGroupSelected: UISegmentedControl!
     @IBOutlet weak var BloodSignSelected: UISegmentedControl!
     @IBOutlet weak var CheckBoxDontknow: UISwitch!
-
+    @IBOutlet weak var MoreLabel: UILabel!
+    
+    @IBOutlet weak var AgeLabel: UITextField!
+    @IBOutlet weak var LessLabel: UILabel!
+    var showingMore = true
+    var showingless = true
     var name :String?
     var Email :String?
     var Password :String?
     var Phone : String?
     var location : String?
     ///
+    ///
     var bloodType="O"
     var bloodGroupResult="";
     var bloodSigne="+";
-    
+    //
+    var Poids = "";
+    ///
+    fileprivate let baseURL = "https://server-oneblood.herokuapp.com/"
+    public var backResponse:backendResponse = backendResponse(message: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         CheckBoxDontknow.setOn(false, animated: false)
         BloodGroupSelected.addTarget(self, action: #selector(SignUp2ViewController.GetvalueBloodGroup(_:)), for: .valueChanged)
         BloodSignSelected.addTarget(self, action: #selector(SignUp2ViewController.GetvalueBloodSigne(_:)), for: .valueChanged)
-        //
         CheckBoxDontknow.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
+        //
+
 
     }
     
@@ -77,23 +88,87 @@ class SignUp2ViewController: UIViewController {
             
         }
     }
+    @IBAction func ClickMore(_ sender: Any) {
+        if(showingMore == true)
+        {
+            MoreLabel.textColor = UIColor(red: 25, green: 0, blue: 0, alpha: 1.0)
+            showingMore = false
+            ///
+            LessLabel.textColor = UIColor.black
+            showingless = true
+            ///
+            Poids="MoreThen50KG"
+        }else{
+            MoreLabel.textColor = UIColor.black
+            showingMore = true
+            //
+            Poids=""
+        }
+    }
 
+    @IBAction func ClickLess(_ sender: Any) {
+        if(showingless == true)
+        {
+            LessLabel.textColor = UIColor(red: 25, green: 0, blue: 0, alpha: 1.0)
+            showingless = false
+            //
+            MoreLabel.textColor = UIColor.black
+            showingMore = true
+            //
+            Poids="LessThen50KG"
+        }else{
+            LessLabel.textColor = UIColor.black
+            showingless = true
+            //
+            Poids=""
+
+        }
+    }
+    
     @IBAction func FinishSignUp(_ sender: Any) {
 
-       //performSegue(withIdentifier: "Login", sender: sender)
         bloodGroupResult = bloodType + bloodSigne
         if(bloodGroupResult.isEmpty)
         {
             bloodGroupResult="IDK";
         }
-        print("Result ===>>>>> "+bloodGroupResult)
-        
-        // To Fix sa3et tjy valuer keen bloodd maghyr + wela -
+        if(!bloodGroupResult.isEmpty && !Poids.isEmpty && AgeLabel.text != "" )
+        {
+            let parameters = ["name" : name! , "email" : Email! , "password" : Password! , "blood" : bloodType , "age" : AgeLabel.text! , "weight" : Poids , "adress" : location! , "phone" :  Phone! , "usertype": "Donor" , "avatar" : name!] as [String:Any]
+         
+            guard let url = URL(string: baseURL+"signup") else { return }
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else { return }
+            request.httpBody = httpBody
+            var status = 0
+            URLSession.shared.dataTask(with: request) { (data,response,error) in
+                if error == nil{
+                    do {
+                        self.backResponse = try JSONDecoder().decode(backendResponse.self, from: data!)
+                        let httpResponse = response as? HTTPURLResponse
+                        status = httpResponse!.statusCode
+                    } catch {
+                        print("parse json error")
+                    }
+                    DispatchQueue.main.async {
+                       if status == 200 {
+                       self.performSegue(withIdentifier: "Login", sender: sender)
+
+                            
+                        }
+                    }
+                }
+            }.resume()
+
+        }
+
         
         
     }
     
-    
+
 
 
     

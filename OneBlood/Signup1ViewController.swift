@@ -53,14 +53,14 @@ class Signup1ViewController: UIViewController {
 
   @IBAction func GoToSignUp2(_ sender: Any) {
 
-  /*  if !validatedName() || !validatedEmail() || !validatedPassword() || !validatedPhone() || !validatedLocation()
+   if !validatedName() || !validatedEmail() || !validatedPassword() || !validatedPhone() || !validatedLocation()
     {
       print("Error")
     } else {
-   */
+   
       performSegue(withIdentifier: "SignUp2", sender: sender)
 
-    //}
+    }
 
   }
 

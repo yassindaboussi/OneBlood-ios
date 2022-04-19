@@ -186,11 +186,17 @@
                                 <rect key="frame" x="85" y="643" width="60" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="we"/>
+                                <connections>
+                                    <action selector="ClickMore:" destination="aO8-iP-udk" eventType="touchUpInside" id="Gjk-lc-Wm8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9F-yU-leH">
                                 <rect key="frame" x="244" y="642" width="60" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="we"/>
+                                <connections>
+                                    <action selector="ClickLess:" destination="aO8-iP-udk" eventType="touchUpInside" id="ZjG-ol-SpU"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wu-RI-ekU">
                                 <rect key="frame" x="135" y="780" width="127" height="41"/>
@@ -222,9 +228,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="Gbd-UK-QpX"/>
                     <connections>
+                        <outlet property="AgeLabel" destination="smI-P5-igL" id="vj9-dy-gfi"/>
                         <outlet property="BloodGroupSelected" destination="iER-en-sn3" id="wls-kK-jhT"/>
                         <outlet property="BloodSignSelected" destination="WGR-Tn-jhf" id="YJu-zF-KiC"/>
                         <outlet property="CheckBoxDontknow" destination="YVj-aE-4Fs" id="Wlo-BH-lgR"/>
+                        <outlet property="LessLabel" destination="Coo-do-x6k" id="erD-mX-8hR"/>
+                        <outlet property="MoreLabel" destination="H87-sf-U11" id="PyU-HC-sU6"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="Login" id="2GD-wv-zbT"/>
                     </connections>
                 </viewController>
