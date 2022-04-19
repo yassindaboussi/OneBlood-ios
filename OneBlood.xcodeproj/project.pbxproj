@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -30,6 +30,9 @@
 		7383DA4E27FF375700C18202 /* lottieGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7383DA4D27FF375700C18202 /* lottieGif.swift */; };
 		7388016F2806C198008024BB /* ProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7388016E2806C198008024BB /* ProfilViewController.swift */; };
 		738801772806FA9D008024BB /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 738801762806FA9D008024BB /* NetworkExtension.framework */; };
+		E410AD17280F089400232F2D /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = E410AD16280F089400232F2D /* FacebookCore */; };
+		E410AD19280F089400232F2D /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = E410AD18280F089400232F2D /* FacebookLogin */; };
+		E410AD1B280F089400232F2D /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = E410AD1A280F089400232F2D /* FacebookShare */; };
 		E4BE0A20280EE9EF00668EA6 /* BackendResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BE0A1F280EE9EF00668EA6 /* BackendResponse.swift */; };
 		E4CDC28C2809A67100E0E07D /* shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CDC28B2809A67100E0E07D /* shake.swift */; };
 		E4CDC28E2809B66600E0E07D /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CDC28D2809B66600E0E07D /* UIColor.swift */; };
@@ -72,13 +75,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E410AD19280F089400232F2D /* FacebookLogin in Frameworks */,
 				738801772806FA9D008024BB /* NetworkExtension.framework in Frameworks */,
+				E410AD17280F089400232F2D /* FacebookCore in Frameworks */,
+				E410AD1B280F089400232F2D /* FacebookShare in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17B3AC6A689BF78CE489DC72 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		733A76962806216200EAE5F8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +143,7 @@
 				7383DA3127FF2D4B00C18202 /* OneBlood */,
 				7383DA3027FF2D4B00C18202 /* Products */,
 				738801752806FA9D008024BB /* Frameworks */,
+				17B3AC6A689BF78CE489DC72 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -194,6 +208,11 @@
 			dependencies = (
 			);
 			name = OneBlood;
+			packageProductDependencies = (
+				E410AD16280F089400232F2D /* FacebookCore */,
+				E410AD18280F089400232F2D /* FacebookLogin */,
+				E410AD1A280F089400232F2D /* FacebookShare */,
+			);
 			productName = OneBlood;
 			productReference = 7383DA2F27FF2D4B00C18202 /* OneBlood.app */;
 			productType = "com.apple.product-type.application";
@@ -221,6 +240,9 @@
 				Base,
 			);
 			mainGroup = 7383DA2627FF2D4A00C18202;
+			packageReferences = (
+				E410AD15280F089400232F2D /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+			);
 			productRefGroup = 7383DA3027FF2D4B00C18202 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -471,6 +493,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E410AD15280F089400232F2D /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E410AD16280F089400232F2D /* FacebookCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E410AD15280F089400232F2D /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookCore;
+		};
+		E410AD18280F089400232F2D /* FacebookLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E410AD15280F089400232F2D /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookLogin;
+		};
+		E410AD1A280F089400232F2D /* FacebookShare */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E410AD15280F089400232F2D /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookShare;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		7383DA3B27FF2D4B00C18202 /* OneBlood.xcdatamodeld */ = {

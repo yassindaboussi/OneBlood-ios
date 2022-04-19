@@ -1,0 +1,25 @@
+PODS:
+  - Bolts (1.9.1):
+    - Bolts/AppLinks (= 1.9.1)
+    - Bolts/Tasks (= 1.9.1)
+  - Bolts/AppLinks (1.9.1):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.9.1)
+  - FBSDKCoreKit (4.10.1):
+    - Bolts (~> 1.5)
+
+DEPENDENCIES:
+  - FBSDKCoreKit
+
+SPEC REPOS:
+  trunk:
+    - Bolts
+    - FBSDKCoreKit
+
+SPEC CHECKSUMS:
+  Bolts: 8c1e8aab2f603387b8b9924f57d1d64f43d3ffdc
+  FBSDKCoreKit: d2aaed5e9ab7d8d6301c533376a1fbff1cf3deb5
+
+PODFILE CHECKSUM: ae5ac2234835ec7d87b9b6bd4cf1b1e93b7fa204
+
+COCOAPODS: 1.11.3
