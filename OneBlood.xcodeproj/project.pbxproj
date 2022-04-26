@@ -11,9 +11,14 @@
 		0806634D27FFB002002B717E /* Signup1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0806634C27FFB002002B717E /* Signup1ViewController.swift */; };
 		0806634F27FFB19D002B717E /* SignUp2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0806634E27FFB19D002B717E /* SignUp2ViewController.swift */; };
 		0806635127FFB44E002B717E /* userlogin.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0806635027FFB44E002B717E /* userlogin.gif */; };
+		43631D23281847D500972C1C /* forgetpass.gif in Resources */ = {isa = PBXBuildFile; fileRef = 43631D22281847D500972C1C /* forgetpass.gif */; };
+		43631D262818486100972C1C /* Forget1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43631D252818486100972C1C /* Forget1ViewController.swift */; };
+		43631D2828184D1600972C1C /* Forget2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43631D2728184D1600972C1C /* Forget2ViewController.swift */; };
+		43631D2A2818529600972C1C /* Forget3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43631D292818529600972C1C /* Forget3ViewController.swift */; };
+		4388C81728182BF0004C1845 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388C81628182BF0004C1845 /* SettingViewController.swift */; };
+		4388C81928182CB3004C1845 /* infoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388C81828182CB3004C1845 /* infoViewController.swift */; };
 		73162CC028002B9E002C7B66 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73162CBF28002B9E002C7B66 /* HomeViewController.swift */; };
 		73162CC3280030F1002C7B66 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73162CC2280030F1002C7B66 /* TabViewController.swift */; };
-		73162CC6280045E4002C7B66 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73162CC5280045E4002C7B66 /* SettingViewController.swift */; };
 		733A76982806219200EAE5F8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733A76972806219200EAE5F8 /* User.swift */; };
 		733A769E28062A5F00EAE5F8 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733A769D28062A5F00EAE5F8 /* Parser.swift */; };
 		733A76A9280635C500EAE5F8 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733A76A8280635C500EAE5F8 /* ApiService.swift */; };
@@ -43,9 +48,14 @@
 		0806634C27FFB002002B717E /* Signup1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup1ViewController.swift; sourceTree = "<group>"; };
 		0806634E27FFB19D002B717E /* SignUp2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp2ViewController.swift; sourceTree = "<group>"; };
 		0806635027FFB44E002B717E /* userlogin.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = userlogin.gif; sourceTree = "<group>"; };
+		43631D22281847D500972C1C /* forgetpass.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = forgetpass.gif; path = ../../forgetpass.gif; sourceTree = "<group>"; };
+		43631D252818486100972C1C /* Forget1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forget1ViewController.swift; sourceTree = "<group>"; };
+		43631D2728184D1600972C1C /* Forget2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forget2ViewController.swift; sourceTree = "<group>"; };
+		43631D292818529600972C1C /* Forget3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forget3ViewController.swift; sourceTree = "<group>"; };
+		4388C81628182BF0004C1845 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		4388C81828182CB3004C1845 /* infoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = infoViewController.swift; sourceTree = "<group>"; };
 		73162CBF28002B9E002C7B66 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		73162CC2280030F1002C7B66 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
-		73162CC5280045E4002C7B66 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		733A76972806219200EAE5F8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		733A769D28062A5F00EAE5F8 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		733A76A8280635C500EAE5F8 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
@@ -92,6 +102,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		43631D242818483D00972C1C /* ForgetPass */ = {
+			isa = PBXGroup;
+			children = (
+				43631D252818486100972C1C /* Forget1ViewController.swift */,
+				43631D2728184D1600972C1C /* Forget2ViewController.swift */,
+				43631D292818529600972C1C /* Forget3ViewController.swift */,
+			);
+			path = ForgetPass;
+			sourceTree = "<group>";
+		};
 		733A76962806216200EAE5F8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,8 +141,11 @@
 		733A76A128062C0700EAE5F8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				43631D242818483D00972C1C /* ForgetPass */,
 				73162CBF28002B9E002C7B66 /* HomeViewController.swift */,
 				7383DA3627FF2D4B00C18202 /* ViewController.swift */,
+				4388C81628182BF0004C1845 /* SettingViewController.swift */,
+				4388C81828182CB3004C1845 /* infoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -173,12 +196,12 @@
 				7383DA4327FF2D5500C18202 /* Info.plist */,
 				7383DA3B27FF2D4B00C18202 /* OneBlood.xcdatamodeld */,
 				7383DA4D27FF375700C18202 /* lottieGif.swift */,
+				43631D22281847D500972C1C /* forgetpass.gif */,
 				0806634A27FFAFDF002B717E /* ConditionViewController.swift */,
 				0806634C27FFB002002B717E /* Signup1ViewController.swift */,
 				0806634E27FFB19D002B717E /* SignUp2ViewController.swift */,
 				0806635027FFB44E002B717E /* userlogin.gif */,
 				73162CC2280030F1002C7B66 /* TabViewController.swift */,
-				73162CC5280045E4002C7B66 /* SettingViewController.swift */,
 				7388016E2806C198008024BB /* ProfilViewController.swift */,
 			);
 			path = OneBlood;
@@ -261,6 +284,7 @@
 				7383DA4227FF2D5500C18202 /* LaunchScreen.storyboard in Resources */,
 				7383DA3F27FF2D5500C18202 /* Assets.xcassets in Resources */,
 				7383DA3A27FF2D4B00C18202 /* Main.storyboard in Resources */,
+				43631D23281847D500972C1C /* forgetpass.gif in Resources */,
 				0806635127FFB44E002B717E /* userlogin.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,8 +299,8 @@
 				0806634B27FFAFDF002B717E /* ConditionViewController.swift in Sources */,
 				7388016F2806C198008024BB /* ProfilViewController.swift in Sources */,
 				E4CDC28C2809A67100E0E07D /* shake.swift in Sources */,
+				43631D262818486100972C1C /* Forget1ViewController.swift in Sources */,
 				E4BE0A20280EE9EF00668EA6 /* BackendResponse.swift in Sources */,
-				73162CC6280045E4002C7B66 /* SettingViewController.swift in Sources */,
 				7383DA4E27FF375700C18202 /* lottieGif.swift in Sources */,
 				7383DA3727FF2D4B00C18202 /* ViewController.swift in Sources */,
 				733A769E28062A5F00EAE5F8 /* Parser.swift in Sources */,
@@ -285,13 +309,17 @@
 				0806634D27FFB002002B717E /* Signup1ViewController.swift in Sources */,
 				73162CC028002B9E002C7B66 /* HomeViewController.swift in Sources */,
 				0806634F27FFB19D002B717E /* SignUp2ViewController.swift in Sources */,
+				4388C81928182CB3004C1845 /* infoViewController.swift in Sources */,
 				733A76B028063EEF00EAE5F8 /* UIContollerAlert.swift in Sources */,
+				43631D2828184D1600972C1C /* Forget2ViewController.swift in Sources */,
 				733A76982806219200EAE5F8 /* User.swift in Sources */,
 				7383DA3527FF2D4B00C18202 /* SceneDelegate.swift in Sources */,
+				4388C81728182BF0004C1845 /* SettingViewController.swift in Sources */,
 				73162CC3280030F1002C7B66 /* TabViewController.swift in Sources */,
 				733A76A9280635C500EAE5F8 /* ApiService.swift in Sources */,
 				733A76AC280637B800EAE5F8 /* AuthResponse.swift in Sources */,
 				7383DA3D27FF2D4B00C18202 /* OneBlood.xcdatamodeld in Sources */,
+				43631D2A2818529600972C1C /* Forget3ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,12 +468,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = OneBlood/OneBlood.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RK5JSK254G;
 				INFOPLIST_FILE = OneBlood/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Oneblood.OneBlood;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Oneblood.OneBloodd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -459,12 +488,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = OneBlood/OneBlood.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RK5JSK254G;
 				INFOPLIST_FILE = OneBlood/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Oneblood.OneBlood;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Oneblood.OneBloodd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

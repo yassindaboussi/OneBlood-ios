@@ -17,7 +17,7 @@ class ViewController: UIViewController{
     fileprivate let baseURL = "https://server-oneblood.herokuapp.com"
     public var connectedUser:User = User(id: "", name: "", email: "", blood: "", age: 0, weight: "" , adress: "", phone: 0, usertype: "", avatar: "", token: "")
     public var response:AuthResponse = AuthResponse( error: "")
-    
+    fileprivate let baseURLRender = "https://onebloodios.onrender.com"
  
     var facebookId = ""
     var facebookFirstName = ""
@@ -27,6 +27,7 @@ class ViewController: UIViewController{
     var facebookProfilePicURL = ""
     var facebookEmail = ""
     var facebookAccessToken = ""
+    
     
     @IBOutlet weak var eyeicon: UIButton!
     @IBOutlet weak var eyePassword: UIImageView!
@@ -160,7 +161,56 @@ class ViewController: UIViewController{
                 self.facebookAccessToken = token?.tokenString ?? ""
                 
                 DispatchQueue.main.async {
-                    self.performSegue(withIdentifier: "Home", sender: self)
+                   // self.performSegue(withIdentifier: "Home", sender: self)
+                    let parameters = ["name" : self.facebookName , "email" : self.facebookEmail] as [String:Any]
+                    print("aaaaaaaaaaa"+self.facebookEmail + self.facebookName);
+                    guard let url = URL(string: self.baseURLRender+"/ByFacebook") else { return }
+                    var request = URLRequest(url: url)
+                    request.httpMethod = "POST"
+                    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+                    guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else { return }
+                    request.httpBody = httpBody
+                    var status = 0
+                    URLSession.shared.dataTask(with: request) { (data,response,error) in
+                        if error == nil{
+                            do {
+                                
+                                let httpResponse = response as? HTTPURLResponse
+                                status = httpResponse!.statusCode
+                
+                                    self.connectedUser = try JSONDecoder().decode(User.self, from: data!)
+                                    print(self.connectedUser)
+                                    print("serialize user")
+                                    
+                                
+                                
+                                
+                            } catch {
+                                print("parse json error")
+                            }
+                    
+                            DispatchQueue.main.async {
+                                
+
+                                    
+                                    print("++++++++++++++++++++++name++++++++++++++++++"+self.connectedUser.name)
+                                    print(self.connectedUser)
+                                   self.saveConnectedUser()
+                                 //   performSegue(withIdentifier: "Home", sender: sender)
+                                
+                                if status == 200 {
+                                  print("Login Facebook")
+                                    self.saveConnectedUser()
+                                    self.performSegue(withIdentifier: "Home", sender: nil)
+                                  }else if status == 202 {
+                                      
+                                      print("Inscription Facebook")
+
+                                  }
+                                
+                            }
+                        }
+                    }.resume()
                 }
                 
             } else {
@@ -287,6 +337,11 @@ class ViewController: UIViewController{
         
     }
     
+    @IBAction func GotoForgetPass(_ sender: Any) {
+       performSegue(withIdentifier: "Forget1", sender: sender)
+
+
+    }
     
 }
 
