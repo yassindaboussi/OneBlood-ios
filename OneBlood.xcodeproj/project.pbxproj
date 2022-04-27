@@ -11,6 +11,7 @@
 		0806634D27FFB002002B717E /* Signup1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0806634C27FFB002002B717E /* Signup1ViewController.swift */; };
 		0806634F27FFB19D002B717E /* SignUp2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0806634E27FFB19D002B717E /* SignUp2ViewController.swift */; };
 		0806635127FFB44E002B717E /* userlogin.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0806635027FFB44E002B717E /* userlogin.gif */; };
+		1304281E2819425400686B33 /* code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1304281D2819425400686B33 /* code.swift */; };
 		1396735A28189E1600E14A3B /* forgetpass.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1396735928189E1600E14A3B /* forgetpass.gif */; };
 		2B5887F2CBA1B90C4E7EBD10 /* Pods_OneBlood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A3377F09D6AB539979FDCE /* Pods_OneBlood.framework */; };
 		43631D262818486100972C1C /* Forget1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43631D252818486100972C1C /* Forget1ViewController.swift */; };
@@ -49,6 +50,7 @@
 		0806634C27FFB002002B717E /* Signup1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup1ViewController.swift; sourceTree = "<group>"; };
 		0806634E27FFB19D002B717E /* SignUp2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp2ViewController.swift; sourceTree = "<group>"; };
 		0806635027FFB44E002B717E /* userlogin.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = userlogin.gif; sourceTree = "<group>"; };
+		1304281D2819425400686B33 /* code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = code.swift; sourceTree = "<group>"; };
 		1396735928189E1600E14A3B /* forgetpass.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = forgetpass.gif; sourceTree = "<group>"; };
 		42A3377F09D6AB539979FDCE /* Pods_OneBlood.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneBlood.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43631D252818486100972C1C /* Forget1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forget1ViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				733A76972806219200EAE5F8 /* User.swift */,
 				733A76AB280637B800EAE5F8 /* AuthResponse.swift */,
 				E4BE0A1F280EE9EF00668EA6 /* BackendResponse.swift */,
+				1304281D2819425400686B33 /* code.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1304281E2819425400686B33 /* code.swift in Sources */,
 				0806634B27FFAFDF002B717E /* ConditionViewController.swift in Sources */,
 				7388016F2806C198008024BB /* ProfilViewController.swift in Sources */,
 				E4CDC28C2809A67100E0E07D /* shake.swift in Sources */,
