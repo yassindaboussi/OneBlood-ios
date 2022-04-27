@@ -11,7 +11,8 @@
 		0806634D27FFB002002B717E /* Signup1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0806634C27FFB002002B717E /* Signup1ViewController.swift */; };
 		0806634F27FFB19D002B717E /* SignUp2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0806634E27FFB19D002B717E /* SignUp2ViewController.swift */; };
 		0806635127FFB44E002B717E /* userlogin.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0806635027FFB44E002B717E /* userlogin.gif */; };
-		43631D23281847D500972C1C /* forgetpass.gif in Resources */ = {isa = PBXBuildFile; fileRef = 43631D22281847D500972C1C /* forgetpass.gif */; };
+		1396735A28189E1600E14A3B /* forgetpass.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1396735928189E1600E14A3B /* forgetpass.gif */; };
+		2B5887F2CBA1B90C4E7EBD10 /* Pods_OneBlood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A3377F09D6AB539979FDCE /* Pods_OneBlood.framework */; };
 		43631D262818486100972C1C /* Forget1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43631D252818486100972C1C /* Forget1ViewController.swift */; };
 		43631D2828184D1600972C1C /* Forget2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43631D2728184D1600972C1C /* Forget2ViewController.swift */; };
 		43631D2A2818529600972C1C /* Forget3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43631D292818529600972C1C /* Forget3ViewController.swift */; };
@@ -48,7 +49,8 @@
 		0806634C27FFB002002B717E /* Signup1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup1ViewController.swift; sourceTree = "<group>"; };
 		0806634E27FFB19D002B717E /* SignUp2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp2ViewController.swift; sourceTree = "<group>"; };
 		0806635027FFB44E002B717E /* userlogin.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = userlogin.gif; sourceTree = "<group>"; };
-		43631D22281847D500972C1C /* forgetpass.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = forgetpass.gif; path = ../../forgetpass.gif; sourceTree = "<group>"; };
+		1396735928189E1600E14A3B /* forgetpass.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = forgetpass.gif; sourceTree = "<group>"; };
+		42A3377F09D6AB539979FDCE /* Pods_OneBlood.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneBlood.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43631D252818486100972C1C /* Forget1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forget1ViewController.swift; sourceTree = "<group>"; };
 		43631D2728184D1600972C1C /* Forget2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forget2ViewController.swift; sourceTree = "<group>"; };
 		43631D292818529600972C1C /* Forget3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forget3ViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +77,8 @@
 		7388016E2806C198008024BB /* ProfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilViewController.swift; sourceTree = "<group>"; };
 		738801742806FA9D008024BB /* OneBlood.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OneBlood.entitlements; sourceTree = "<group>"; };
 		738801762806FA9D008024BB /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		7D4A7A84DFDA1762B29AEFEA /* Pods-OneBlood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneBlood.debug.xcconfig"; path = "Target Support Files/Pods-OneBlood/Pods-OneBlood.debug.xcconfig"; sourceTree = "<group>"; };
+		9E8F5BDD8CAB8ADD3CDD282A /* Pods-OneBlood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneBlood.release.xcconfig"; path = "Target Support Files/Pods-OneBlood/Pods-OneBlood.release.xcconfig"; sourceTree = "<group>"; };
 		E4BE0A1F280EE9EF00668EA6 /* BackendResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendResponse.swift; sourceTree = "<group>"; };
 		E4CDC28B2809A67100E0E07D /* shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shake.swift; sourceTree = "<group>"; };
 		E4CDC28D2809B66600E0E07D /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -89,6 +93,7 @@
 				738801772806FA9D008024BB /* NetworkExtension.framework in Frameworks */,
 				E410AD17280F089400232F2D /* FacebookCore in Frameworks */,
 				E410AD1B280F089400232F2D /* FacebookShare in Frameworks */,
+				2B5887F2CBA1B90C4E7EBD10 /* Pods_OneBlood.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +103,8 @@
 		17B3AC6A689BF78CE489DC72 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				7D4A7A84DFDA1762B29AEFEA /* Pods-OneBlood.debug.xcconfig */,
+				9E8F5BDD8CAB8ADD3CDD282A /* Pods-OneBlood.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -196,13 +203,13 @@
 				7383DA4327FF2D5500C18202 /* Info.plist */,
 				7383DA3B27FF2D4B00C18202 /* OneBlood.xcdatamodeld */,
 				7383DA4D27FF375700C18202 /* lottieGif.swift */,
-				43631D22281847D500972C1C /* forgetpass.gif */,
 				0806634A27FFAFDF002B717E /* ConditionViewController.swift */,
 				0806634C27FFB002002B717E /* Signup1ViewController.swift */,
 				0806634E27FFB19D002B717E /* SignUp2ViewController.swift */,
 				0806635027FFB44E002B717E /* userlogin.gif */,
 				73162CC2280030F1002C7B66 /* TabViewController.swift */,
 				7388016E2806C198008024BB /* ProfilViewController.swift */,
+				1396735928189E1600E14A3B /* forgetpass.gif */,
 			);
 			path = OneBlood;
 			sourceTree = "<group>";
@@ -211,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				738801762806FA9D008024BB /* NetworkExtension.framework */,
+				42A3377F09D6AB539979FDCE /* Pods_OneBlood.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -222,9 +230,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7383DA4627FF2D5500C18202 /* Build configuration list for PBXNativeTarget "OneBlood" */;
 			buildPhases = (
+				F3DF79963BE79EBD4BFD367D /* [CP] Check Pods Manifest.lock */,
 				7383DA2B27FF2D4B00C18202 /* Sources */,
 				7383DA2C27FF2D4B00C18202 /* Frameworks */,
 				7383DA2D27FF2D4B00C18202 /* Resources */,
+				E49651C52C08A12A67FB3041 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -284,12 +294,54 @@
 				7383DA4227FF2D5500C18202 /* LaunchScreen.storyboard in Resources */,
 				7383DA3F27FF2D5500C18202 /* Assets.xcassets in Resources */,
 				7383DA3A27FF2D4B00C18202 /* Main.storyboard in Resources */,
-				43631D23281847D500972C1C /* forgetpass.gif in Resources */,
+				1396735A28189E1600E14A3B /* forgetpass.gif in Resources */,
 				0806635127FFB44E002B717E /* userlogin.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E49651C52C08A12A67FB3041 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OneBlood/Pods-OneBlood-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OneBlood/Pods-OneBlood-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OneBlood/Pods-OneBlood-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3DF79963BE79EBD4BFD367D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OneBlood-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7383DA2B27FF2D4B00C18202 /* Sources */ = {
@@ -463,6 +515,7 @@
 		};
 		7383DA4727FF2D5500C18202 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D4A7A84DFDA1762B29AEFEA /* Pods-OneBlood.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -483,6 +536,7 @@
 		};
 		7383DA4827FF2D5500C18202 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E8F5BDD8CAB8ADD3CDD282A /* Pods-OneBlood.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

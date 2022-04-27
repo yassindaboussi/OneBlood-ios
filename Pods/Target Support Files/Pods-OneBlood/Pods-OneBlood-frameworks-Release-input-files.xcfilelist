@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-OneBlood/Pods-OneBlood-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework
+${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework
+${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework

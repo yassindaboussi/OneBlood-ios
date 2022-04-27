@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class infoViewController: UIViewController {
 
@@ -32,4 +33,23 @@ class infoViewController: UIViewController {
         self.present(balanceViewController, animated: true, completion: nil)*/
     }
     
+    @IBAction func LogoutAction(_ sender: Any) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            
+        let managedContext = appDelegate.persistentContainer.viewContext
+            
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Connected")
+            
+        do {
+            let result = try managedContext.fetch(fetchRequest)
+            for obj in result {
+                managedContext.delete(obj)
+            }
+            try managedContext.save()
+            print("deleted connected user")
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        performSegue(withIdentifier: "logoutSegue", sender: sender)
+    }
 }
