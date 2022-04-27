@@ -5,7 +5,7 @@ target 'OneBlood' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-pod 'FBSDKCoreKit', :modular_headers => true
+
 pod 'DropDown'
 
 end

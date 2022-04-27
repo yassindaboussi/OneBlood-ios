@@ -1,29 +1,16 @@
 PODS:
-  - Bolts (1.9.1):
-    - Bolts/AppLinks (= 1.9.1)
-    - Bolts/Tasks (= 1.9.1)
-  - Bolts/AppLinks (1.9.1):
-    - Bolts/Tasks
-  - Bolts/Tasks (1.9.1)
   - DropDown (2.3.13)
-  - FBSDKCoreKit (4.10.1):
-    - Bolts (~> 1.5)
 
 DEPENDENCIES:
   - DropDown
-  - FBSDKCoreKit
 
 SPEC REPOS:
   trunk:
-    - Bolts
     - DropDown
-    - FBSDKCoreKit
 
 SPEC CHECKSUMS:
-  Bolts: 8c1e8aab2f603387b8b9924f57d1d64f43d3ffdc
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
-  FBSDKCoreKit: d2aaed5e9ab7d8d6301c533376a1fbff1cf3deb5
 
-PODFILE CHECKSUM: 4715e324e6a1294cc73999effbe0200be254bafa
+PODFILE CHECKSUM: 4f8b13703a063be2b997e56e92ccbf4db17d73ba
 
 COCOAPODS: 1.11.3
