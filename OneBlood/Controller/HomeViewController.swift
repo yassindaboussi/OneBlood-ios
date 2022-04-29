@@ -40,18 +40,40 @@ class HomeViewController: UIViewController {
         imageProfile.layer.borderWidth = 1
         imageProfile.clipsToBounds = true
          self.view.addSubview(imageProfile)
+        self.view.layoutIfNeeded()
         ///
         getConnectedUser()
        setupUser()
+        
+
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        getConnectedUser()
+        bloodtype.text = connectedUser.blood
+        usertypetxt.text = connectedUser.usertype
+        print("yyyyyyyy")
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+       
+    }
     func setupUser() {
         /*
         //let avatarUrl = baseURL + "uploads/users/" + connectedUser.avatar
         ProfilePic.sd_setImage(with: URL(string: avatarUrl), placeholderImage: UIImage(named: "nikeair"), options: [.continueInBackground, .progressiveLoad])*/
         bloodtype.text = connectedUser.blood
         usertypetxt.text = connectedUser.usertype
+        print("yyyyyyyy")
+        self.view.layoutIfNeeded()
+
     }
+    
+    
+    
     func getConnectedUser() {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate

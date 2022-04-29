@@ -89,8 +89,6 @@ class SettingViewController: UIViewController {
         txtlocation.text = connectedUser.adress
         LabelBlood.text = connectedUser.blood
         LabelUserType.text = connectedUser.usertype
-        
-
     }
     @IBAction func SaveAction(_ sender: Any) {
         let parameters = ["id" : connectedUser.id,"name" : txtname.text! , "email" : txtemail.text! , "blood" : LabelBlood.text! , "age" : txtage.text! , "adress" : txtlocation.text! , "phone" :  txtphone.text! , "usertype" : LabelUserType.text! , "avatar" : txtname.text!] as [String : Any]
@@ -121,30 +119,12 @@ class SettingViewController: UIViewController {
                     
                     if(status == 202)
                     {
-                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                            
-                        let managedContext = appDelegate.persistentContainer.viewContext
-                            
-                        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Connected")
-                            
-                        do {
-                            let result = try managedContext.fetch(fetchRequest)
-                            for obj in result {
-                                managedContext.delete(obj)
-                            }
-                            try managedContext.save()
-                            print("deleted connected user")
-                        } catch let error as NSError {
-                            print("Could not fetch. \(error), \(error.userInfo)")
-                        }
-                        
-                        print("++++++++++++++++++++++name++++++++++++++++++"+self.connectedUser.name)
-                        print(self.connectedUser)
-                       self.saveConnectedUser()
-                        self.getConnectedUser()
-                        self.setupUser()
+                       self.updateData(id: self.connectedUser.id)
+                       //self.saveConnectedUser()
+                       // self.getConnectedUser()
+                       // self.setupUser()
                     }
-                     //   performSegue(withIdentifier: "Home", sender: sender)
+                    //self.performSegue(withIdentifier: "Home", sender: sender)
                     
                  
                     
@@ -152,6 +132,43 @@ class SettingViewController: UIViewController {
             }
         }.resume()
     }
+    func updateData(id : String) {
+        guard
+            let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        else {
+            return
+        }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "Connected", in : managedContext)
+        let request = NSFetchRequest < NSFetchRequestResult > ()
+        request.entity = entity
+        let predicate = NSPredicate(format:"id = %@", id as String)
+        request.predicate = predicate
+        do {
+            let results =
+                try managedContext.fetch(request)
+            let object = results[0] as!NSManagedObject
+
+            //
+            object.setValue(txtname.text!, forKey: "name")
+            object.setValue(txtlocation.text!, forKey: "adress")
+            object.setValue( txtemail.text!, forKey: "email")
+            object.setValue(LabelBlood.text!, forKey: "bloodtype")
+            object.setValue(Int32(txtphone.text!), forKey: "phone")
+
+            object.setValue(LabelUserType.text!, forKey: "usertype")
+            //object.setValue(self.connectedUser.avatar, forKey: "avatar")
+            object.setValue(Int32(txtage.text!), forKey: "age")
+            
+            do {
+                try managedContext.save()
+                print("Record Updated!")
+            } catch
+            let error as NSError {}
+        } catch
+        let error as NSError {}
+    }  
+    
     func saveConnectedUser() -> Void {
         
         let appD = UIApplication.shared.delegate as! AppDelegate
