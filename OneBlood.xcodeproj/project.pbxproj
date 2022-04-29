@@ -37,6 +37,9 @@
 		7383DA4E27FF375700C18202 /* lottieGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7383DA4D27FF375700C18202 /* lottieGif.swift */; };
 		7388016F2806C198008024BB /* ProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7388016E2806C198008024BB /* ProfilViewController.swift */; };
 		738801772806FA9D008024BB /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 738801762806FA9D008024BB /* NetworkExtension.framework */; };
+		942F7352281C2CA700533388 /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942F7351281C2CA700533388 /* HexColor.swift */; };
+		945A5C2F281C0DBD003D00E7 /* NeedyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945A5C2E281C0DBD003D00E7 /* NeedyViewController.swift */; };
+		945A5C31281C127A003D00E7 /* Needy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945A5C30281C127A003D00E7 /* Needy.swift */; };
 		E410AD17280F089400232F2D /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = E410AD16280F089400232F2D /* FacebookCore */; };
 		E410AD19280F089400232F2D /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = E410AD18280F089400232F2D /* FacebookLogin */; };
 		E410AD1B280F089400232F2D /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = E410AD1A280F089400232F2D /* FacebookShare */; };
@@ -80,6 +83,9 @@
 		738801742806FA9D008024BB /* OneBlood.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OneBlood.entitlements; sourceTree = "<group>"; };
 		738801762806FA9D008024BB /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		7D4A7A84DFDA1762B29AEFEA /* Pods-OneBlood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneBlood.debug.xcconfig"; path = "Target Support Files/Pods-OneBlood/Pods-OneBlood.debug.xcconfig"; sourceTree = "<group>"; };
+		942F7351281C2CA700533388 /* HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColor.swift; sourceTree = "<group>"; };
+		945A5C2E281C0DBD003D00E7 /* NeedyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedyViewController.swift; sourceTree = "<group>"; };
+		945A5C30281C127A003D00E7 /* Needy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Needy.swift; sourceTree = "<group>"; };
 		9E8F5BDD8CAB8ADD3CDD282A /* Pods-OneBlood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneBlood.release.xcconfig"; path = "Target Support Files/Pods-OneBlood/Pods-OneBlood.release.xcconfig"; sourceTree = "<group>"; };
 		E4BE0A1F280EE9EF00668EA6 /* BackendResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendResponse.swift; sourceTree = "<group>"; };
 		E4CDC28B2809A67100E0E07D /* shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shake.swift; sourceTree = "<group>"; };
@@ -128,6 +134,7 @@
 				733A76AB280637B800EAE5F8 /* AuthResponse.swift */,
 				E4BE0A1F280EE9EF00668EA6 /* BackendResponse.swift */,
 				1304281D2819425400686B33 /* code.swift */,
+				945A5C30281C127A003D00E7 /* Needy.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -156,6 +163,7 @@
 				7383DA3627FF2D4B00C18202 /* ViewController.swift */,
 				4388C81628182BF0004C1845 /* SettingViewController.swift */,
 				4388C81828182CB3004C1845 /* infoViewController.swift */,
+				945A5C2E281C0DBD003D00E7 /* NeedyViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -166,6 +174,7 @@
 				733A76AF28063EEF00EAE5F8 /* UIContollerAlert.swift */,
 				E4CDC28B2809A67100E0E07D /* shake.swift */,
 				E4CDC28D2809B66600E0E07D /* UIColor.swift */,
+				942F7351281C2CA700533388 /* HexColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -351,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				945A5C2F281C0DBD003D00E7 /* NeedyViewController.swift in Sources */,
 				1304281E2819425400686B33 /* code.swift in Sources */,
 				0806634B27FFAFDF002B717E /* ConditionViewController.swift in Sources */,
 				7388016F2806C198008024BB /* ProfilViewController.swift in Sources */,
@@ -364,12 +374,14 @@
 				E4CDC28E2809B66600E0E07D /* UIColor.swift in Sources */,
 				0806634D27FFB002002B717E /* Signup1ViewController.swift in Sources */,
 				73162CC028002B9E002C7B66 /* HomeViewController.swift in Sources */,
+				945A5C31281C127A003D00E7 /* Needy.swift in Sources */,
 				0806634F27FFB19D002B717E /* SignUp2ViewController.swift in Sources */,
 				4388C81928182CB3004C1845 /* infoViewController.swift in Sources */,
 				733A76B028063EEF00EAE5F8 /* UIContollerAlert.swift in Sources */,
 				43631D2828184D1600972C1C /* Forget2ViewController.swift in Sources */,
 				733A76982806219200EAE5F8 /* User.swift in Sources */,
 				7383DA3527FF2D4B00C18202 /* SceneDelegate.swift in Sources */,
+				942F7352281C2CA700533388 /* HexColor.swift in Sources */,
 				4388C81728182BF0004C1845 /* SettingViewController.swift in Sources */,
 				73162CC3280030F1002C7B66 /* TabViewController.swift in Sources */,
 				733A76A9280635C500EAE5F8 /* ApiService.swift in Sources */,
