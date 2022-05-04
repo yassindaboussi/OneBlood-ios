@@ -14,6 +14,7 @@
 		1304281E2819425400686B33 /* code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1304281D2819425400686B33 /* code.swift */; };
 		1396735A28189E1600E14A3B /* forgetpass.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1396735928189E1600E14A3B /* forgetpass.gif */; };
 		2B5887F2CBA1B90C4E7EBD10 /* Pods_OneBlood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A3377F09D6AB539979FDCE /* Pods_OneBlood.framework */; };
+		4323DAE328226FEE00BA9E02 /* AddNeedyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4323DAE228226FEE00BA9E02 /* AddNeedyViewController.swift */; };
 		43631D262818486100972C1C /* Forget1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43631D252818486100972C1C /* Forget1ViewController.swift */; };
 		43631D2828184D1600972C1C /* Forget2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43631D2728184D1600972C1C /* Forget2ViewController.swift */; };
 		43631D2A2818529600972C1C /* Forget3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43631D292818529600972C1C /* Forget3ViewController.swift */; };
@@ -56,6 +57,7 @@
 		1304281D2819425400686B33 /* code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = code.swift; sourceTree = "<group>"; };
 		1396735928189E1600E14A3B /* forgetpass.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = forgetpass.gif; sourceTree = "<group>"; };
 		42A3377F09D6AB539979FDCE /* Pods_OneBlood.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneBlood.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4323DAE228226FEE00BA9E02 /* AddNeedyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNeedyViewController.swift; sourceTree = "<group>"; };
 		43631D252818486100972C1C /* Forget1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forget1ViewController.swift; sourceTree = "<group>"; };
 		43631D2728184D1600972C1C /* Forget2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forget2ViewController.swift; sourceTree = "<group>"; };
 		43631D292818529600972C1C /* Forget3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forget3ViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				4388C81628182BF0004C1845 /* SettingViewController.swift */,
 				4388C81828182CB3004C1845 /* infoViewController.swift */,
 				945A5C2E281C0DBD003D00E7 /* NeedyViewController.swift */,
+				4323DAE228226FEE00BA9E02 /* AddNeedyViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				733A76AC280637B800EAE5F8 /* AuthResponse.swift in Sources */,
 				7383DA3D27FF2D4B00C18202 /* OneBlood.xcdatamodeld in Sources */,
 				43631D2A2818529600972C1C /* Forget3ViewController.swift in Sources */,
+				4323DAE328226FEE00BA9E02 /* AddNeedyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

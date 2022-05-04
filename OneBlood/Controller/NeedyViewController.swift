@@ -76,6 +76,38 @@ class NeedyViewController: UIViewController {
         {
             ButtonAdd.isHidden = false
         }
+        
+        NeedyView.delegate = self
+        NeedyView.dataSource = self
+        // Do any additional setup after loading the view.
+        
+        //get products
+        let productsUrl = URL(string: baseURL+"GetAllBesoin")
+        URLSession.shared.dataTask(with: productsUrl!) { (data,response,error) in
+            if error == nil{
+                do {
+                    self.productList = try JSONDecoder().decode([Needy].self, from: data!)
+                } catch {
+                    print("parse json error")
+                }
+                
+                DispatchQueue.main.async {
+                    
+
+   
+                    
+                    self.NeedyView.performBatchUpdates(
+                      {
+                        self.NeedyView.reloadSections(NSIndexSet(index: 0) as IndexSet)
+                      }, completion: { (finished:Bool) -> Void in
+                    })
+                    
+                    //self.filterProducts.reloadData()
+                    //self.Products.reloadData()
+                }
+            }
+        }.resume()
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
