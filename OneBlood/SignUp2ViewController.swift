@@ -134,7 +134,7 @@ class SignUp2ViewController: UIViewController {
         }
         if(!bloodGroupResult.isEmpty && !Poids.isEmpty && AgeLabel.text != "" )
         {
-            let parameters = ["name" : name! , "email" : Email! , "password" : Password! , "blood" : bloodType , "age" : AgeLabel.text! , "weight" : Poids , "adress" : location! , "phone" :  Phone! , "usertype": "Donor" , "avatar" : name!] as [String:Any]
+            let parameters = ["name" : name! , "email" : Email! , "password" : Password! , "blood" : bloodGroupResult , "age" : AgeLabel.text! , "weight" : Poids , "adress" : location! , "phone" :  Phone! , "usertype": "Donor" , "avatar" : name!] as [String:Any]
          
             guard let url = URL(string: baseURL+"signup") else { return }
             var request = URLRequest(url: url)

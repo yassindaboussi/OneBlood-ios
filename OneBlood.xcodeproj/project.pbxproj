@@ -38,6 +38,12 @@
 		7383DA4E27FF375700C18202 /* lottieGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7383DA4D27FF375700C18202 /* lottieGif.swift */; };
 		7388016F2806C198008024BB /* ProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7388016E2806C198008024BB /* ProfilViewController.swift */; };
 		738801772806FA9D008024BB /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 738801762806FA9D008024BB /* NetworkExtension.framework */; };
+		7BDD8532282B0DA600AF1A63 /* PopOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD8531282B0DA600AF1A63 /* PopOptionsViewController.swift */; };
+		7BDD853B282B329100AF1A63 /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD853A282B329100AF1A63 /* Information.swift */; };
+		7BDD853F282B33F200AF1A63 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD853E282B33F200AF1A63 /* MapViewController.swift */; };
+		7BDD8543282B359900AF1A63 /* ListMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD8542282B359900AF1A63 /* ListMap.swift */; };
+		7BDD8546282B430600AF1A63 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BDD8545282B430600AF1A63 /* CoreLocation.framework */; };
+		7BDD8556282B869D00AF1A63 /* PopMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD8555282B869D00AF1A63 /* PopMapViewController.swift */; };
 		942F7352281C2CA700533388 /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942F7351281C2CA700533388 /* HexColor.swift */; };
 		945A5C2F281C0DBD003D00E7 /* NeedyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945A5C2E281C0DBD003D00E7 /* NeedyViewController.swift */; };
 		945A5C31281C127A003D00E7 /* Needy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945A5C30281C127A003D00E7 /* Needy.swift */; };
@@ -84,6 +90,13 @@
 		7388016E2806C198008024BB /* ProfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilViewController.swift; sourceTree = "<group>"; };
 		738801742806FA9D008024BB /* OneBlood.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OneBlood.entitlements; sourceTree = "<group>"; };
 		738801762806FA9D008024BB /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		7BDD8531282B0DA600AF1A63 /* PopOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOptionsViewController.swift; sourceTree = "<group>"; };
+		7BDD853A282B329100AF1A63 /* Information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Information.swift; sourceTree = "<group>"; };
+		7BDD853E282B33F200AF1A63 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		7BDD8542282B359900AF1A63 /* ListMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMap.swift; sourceTree = "<group>"; };
+		7BDD8545282B430600AF1A63 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		7BDD8549282B4ED100AF1A63 /* myplace.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = myplace.gpx; sourceTree = "<group>"; };
+		7BDD8555282B869D00AF1A63 /* PopMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopMapViewController.swift; sourceTree = "<group>"; };
 		7D4A7A84DFDA1762B29AEFEA /* Pods-OneBlood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneBlood.debug.xcconfig"; path = "Target Support Files/Pods-OneBlood/Pods-OneBlood.debug.xcconfig"; sourceTree = "<group>"; };
 		942F7351281C2CA700533388 /* HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColor.swift; sourceTree = "<group>"; };
 		945A5C2E281C0DBD003D00E7 /* NeedyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedyViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BDD8546282B430600AF1A63 /* CoreLocation.framework in Frameworks */,
 				E410AD19280F089400232F2D /* FacebookLogin in Frameworks */,
 				738801772806FA9D008024BB /* NetworkExtension.framework in Frameworks */,
 				E410AD17280F089400232F2D /* FacebookCore in Frameworks */,
@@ -137,6 +151,8 @@
 				E4BE0A1F280EE9EF00668EA6 /* BackendResponse.swift */,
 				1304281D2819425400686B33 /* code.swift */,
 				945A5C30281C127A003D00E7 /* Needy.swift */,
+				7BDD853A282B329100AF1A63 /* Information.swift */,
+				7BDD8542282B359900AF1A63 /* ListMap.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -167,6 +183,9 @@
 				4388C81828182CB3004C1845 /* infoViewController.swift */,
 				945A5C2E281C0DBD003D00E7 /* NeedyViewController.swift */,
 				4323DAE228226FEE00BA9E02 /* AddNeedyViewController.swift */,
+				7BDD8531282B0DA600AF1A63 /* PopOptionsViewController.swift */,
+				7BDD853E282B33F200AF1A63 /* MapViewController.swift */,
+				7BDD8555282B869D00AF1A63 /* PopMapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -225,6 +244,7 @@
 				73162CC2280030F1002C7B66 /* TabViewController.swift */,
 				7388016E2806C198008024BB /* ProfilViewController.swift */,
 				1396735928189E1600E14A3B /* forgetpass.gif */,
+				7BDD8549282B4ED100AF1A63 /* myplace.gpx */,
 			);
 			path = OneBlood;
 			sourceTree = "<group>";
@@ -232,6 +252,7 @@
 		738801752806FA9D008024BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7BDD8545282B430600AF1A63 /* CoreLocation.framework */,
 				738801762806FA9D008024BB /* NetworkExtension.framework */,
 				42A3377F09D6AB539979FDCE /* Pods_OneBlood.framework */,
 			);
@@ -376,14 +397,19 @@
 				7383DA3327FF2D4B00C18202 /* AppDelegate.swift in Sources */,
 				E4CDC28E2809B66600E0E07D /* UIColor.swift in Sources */,
 				0806634D27FFB002002B717E /* Signup1ViewController.swift in Sources */,
+				7BDD8532282B0DA600AF1A63 /* PopOptionsViewController.swift in Sources */,
 				73162CC028002B9E002C7B66 /* HomeViewController.swift in Sources */,
+				7BDD853F282B33F200AF1A63 /* MapViewController.swift in Sources */,
 				945A5C31281C127A003D00E7 /* Needy.swift in Sources */,
+				7BDD8556282B869D00AF1A63 /* PopMapViewController.swift in Sources */,
 				0806634F27FFB19D002B717E /* SignUp2ViewController.swift in Sources */,
+				7BDD853B282B329100AF1A63 /* Information.swift in Sources */,
 				4388C81928182CB3004C1845 /* infoViewController.swift in Sources */,
 				733A76B028063EEF00EAE5F8 /* UIContollerAlert.swift in Sources */,
 				43631D2828184D1600972C1C /* Forget2ViewController.swift in Sources */,
 				733A76982806219200EAE5F8 /* User.swift in Sources */,
 				7383DA3527FF2D4B00C18202 /* SceneDelegate.swift in Sources */,
+				7BDD8543282B359900AF1A63 /* ListMap.swift in Sources */,
 				942F7352281C2CA700533388 /* HexColor.swift in Sources */,
 				4388C81728182BF0004C1845 /* SettingViewController.swift in Sources */,
 				73162CC3280030F1002C7B66 /* TabViewController.swift in Sources */,

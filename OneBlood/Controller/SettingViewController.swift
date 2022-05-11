@@ -67,7 +67,8 @@ class SettingViewController: UIViewController {
         }
         
         //
-        
+        getConnectedUser()
+        setupUser()
       
 
     }

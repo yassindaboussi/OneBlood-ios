@@ -8,14 +8,23 @@
 import UIKit
 import CoreData
 
-class NeedyViewController: UIViewController {
+class NeedyViewController: UIViewController  {
 
     
+
+    
+
+
+    
+    @IBOutlet weak var searchbar: UISearchBar!
+    @IBOutlet weak var btnmatchblood: UIButton!
     @IBOutlet weak var ButtonAdd: UIButton!
     fileprivate let baseURL = "https://server-oneblood.herokuapp.com/"
     var connectedUser:User = User(id: "notyet", name: "", email: "", blood: "", age: 0, weight: "" , adress: "", phone: 0, usertype: "", avatar: "", token: "")
 
  
+  
+    
     @IBOutlet weak var NeedyView: UICollectionView! = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -32,6 +41,7 @@ class NeedyViewController: UIViewController {
 
         NeedyView.delegate = self
         NeedyView.dataSource = self
+        getConnectedUser()
         // Do any additional setup after loading the view.
         
         //get products
@@ -62,6 +72,32 @@ class NeedyViewController: UIViewController {
         }.resume()
         
 
+    }
+    func getConnectedUser() {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Connected")
+        do {
+            let result = try managedContext.fetch(fetchRequest)
+            for obj in result {
+                self.connectedUser.id =  (obj.value(forKey: "id") as! String)
+                self.connectedUser.name=(obj.value(forKey: "name") as! String)
+                self.connectedUser.phone=(obj.value(forKey: "phone") as! Int)
+                self.connectedUser.email=(obj.value(forKey: "email") as! String)
+                self.connectedUser.age=(obj.value(forKey: "age") as! Int)
+                self.connectedUser.usertype=(obj.value(forKey: "usertype") as! String)
+                self.connectedUser.blood=(obj.value(forKey: "bloodtype") as! String)
+                self.connectedUser.avatar=(obj.value(forKey: "avatar") as! String)
+                self.connectedUser.adress=(obj.value(forKey: "adress") as! String)
+                self.connectedUser.token=(obj.value(forKey: "token") as! String)
+                
+            }
+            
+         
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -93,10 +129,7 @@ class NeedyViewController: UIViewController {
                 
                 DispatchQueue.main.async {
                     
-
-   
-                    
-                    self.NeedyView.performBatchUpdates(
+            self.NeedyView.performBatchUpdates(
                       {
                         self.NeedyView.reloadSections(NSIndexSet(index: 0) as IndexSet)
                       }, completion: { (finished:Bool) -> Void in
@@ -114,41 +147,34 @@ class NeedyViewController: UIViewController {
         super.viewDidDisappear(animated)
        
     }
-    
+
+    /*
+    @IBAction func BtnEditClicked(_ sender: Any) {
+        
+        performSegue(withIdentifier: "GoPop", sender: sender)
+        
+    }*/
     @IBAction func ButtonAddClicked(_ sender: Any) {
         
         performSegue(withIdentifier: "AddNeedy", sender: sender)
         
     }
-    func getConnectedUser() {
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Connected")
-        do {
-            let result = try managedContext.fetch(fetchRequest)
-            for obj in result {
-                self.connectedUser.id =  (obj.value(forKey: "id") as! String)
-                self.connectedUser.name=(obj.value(forKey: "name") as! String)
-                self.connectedUser.phone=(obj.value(forKey: "phone") as! Int)
-                self.connectedUser.email=(obj.value(forKey: "email") as! String)
-                self.connectedUser.age=(obj.value(forKey: "age") as! Int)
-                self.connectedUser.usertype=(obj.value(forKey: "usertype") as! String)
-                self.connectedUser.blood=(obj.value(forKey: "bloodtype") as! String)
-                self.connectedUser.avatar=(obj.value(forKey: "avatar") as! String)
-                self.connectedUser.adress=(obj.value(forKey: "adress") as! String)
-                self.connectedUser.token=(obj.value(forKey: "token") as! String)
-                
-            }
-            
-         
-        } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
-        }
-    }
+
     
     
     }
+
+func updateSearchResults(for searchController: UISearchController) {
+    
+}
+
+func filtrenow(searchText : String , scopeButton :String = "All")
+{
+  // filtredshapes = shapes
+    
+}
+
+
     
 extension NeedyViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -195,13 +221,8 @@ extension NeedyViewController: UICollectionViewDelegateFlowLayout, UICollectionV
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
 
-            
-
-           
-       
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mcell", for: indexPath)
-        
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mcell", for: indexPath)
+        cell.layer.cornerRadius = 10
         let contentView = cell.contentView
         
         let Date = contentView.viewWithTag(2) as! UILabel
@@ -210,7 +231,7 @@ extension NeedyViewController: UICollectionViewDelegateFlowLayout, UICollectionV
         let Hospital = contentView.viewWithTag(5) as! UILabel
         let Phone = contentView.viewWithTag(6) as! UILabel
         let Blood = contentView.viewWithTag(7) as! UILabel
-        
+        let Btn = contentView.viewWithTag(8) as! UIButton
 
         
 
@@ -220,6 +241,18 @@ extension NeedyViewController: UICollectionViewDelegateFlowLayout, UICollectionV
         Hospital.text = productList[indexPath.row].location
         Phone.text = String (productList[indexPath.row].phone)
         Blood.text = productList[indexPath.row].blood
+  
+       // Btn.addTarget(self, action: Selector("action:"), for: UIControl.Event.touchUpInside)
+      
+        
+        
+        if(productList[indexPath.row].postedby == connectedUser.id)
+        {
+            Btn.isHidden = false
+        }
+        else {
+            Btn.isHidden = true
+        }
         
         if(Situation.text == "Danger")
         {
@@ -237,24 +270,50 @@ extension NeedyViewController: UICollectionViewDelegateFlowLayout, UICollectionV
             cell.contentView.backgroundColor = UIColor(red: 24, green: 24, blue: 56 )
         }else
         {
-            cell.contentView.backgroundColor = UIColor.CustomBlue
+            cell.contentView.backgroundColor = UIColor(red: 24, green: 24, blue: 56 )
         }
-        
+        Btn.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+
+      
 
         return cell
     }
     
+    @objc func buttonAction(sender: UIButton!) {
+        performSegue(withIdentifier: "GoPop", sender: Int.self)
+        /*
+        let indexpath1 = IndexPath(row: sender.tag, section: 0)
+        let home = self.storyboard?.instantiateViewController(withIdentifier: "PopOptionsViewController") as! PopOptionsViewController
+     
+        home.Id_post = productList[indexpath1.row]._id
+        //self.navigationController?.pushViewController(home, animated:true)
+        self.dismiss(animated:true, completion:nil);
+       // self.navigationController?.popViewController(home,animated:true);*/
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-      /*  if segue.identifier=="prodDetailSegue" {
-            let indexPath = sender as! Int
+     if segue.identifier=="GoPop" {
+        let indexPath = sender as! Int
             let product = productList[indexPath]
-            let destination = segue.destination as! ProductDetailsController
+            let destination = segue.destination as! PopOptionsViewController
+        destination.Id_post = product._id
+        destination.Blood = product.blood
+        destination.name = product.nom
+        destination.hospital = product.location
+        destination.phone = String (product.phone)
+        
+        
+
+        
             
-            destination.Prod = product
+       // destination. = product
         }
-*/
+
     }
+    
+    
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     /*    if collectionView==Products {
@@ -277,5 +336,13 @@ extension NeedyViewController: UICollectionViewDelegateFlowLayout, UICollectionV
             //self.Products.reloadData()
         }
      */
+        
     }
+    
+    
+  
+
+    
+    
     }
+
