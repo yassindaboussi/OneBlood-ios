@@ -9,6 +9,6 @@ import Foundation
 
 struct Information: Decodable {
     var Nom : String
-    var Location, Numero, Longitude,Latitude: String
+    var Location, Numero, Longitude,Latitude , city: String
 
 }

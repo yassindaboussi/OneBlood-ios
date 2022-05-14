@@ -19,13 +19,13 @@ class MapViewController: UIViewController , CLLocationManagerDelegate , UITableV
     
     @IBOutlet weak var showmylocation: UILabel!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listhospi.Maptunis.count
+        return listhospi.MapAll.count
     }
     
 
     
     
-    public var Maptunis:Information = Information(Nom: "String", Location: "String", Numero: "String", Longitude: "String", Latitude: "String")
+    //   public var Maptunis:Information = Information(Nom: "String", Location: "String", Numero: "String", Longitude: "String", Latitude: "String")
    
    // var Maptunis = [Information]()
     
@@ -56,15 +56,14 @@ class MapViewController: UIViewController , CLLocationManagerDelegate , UITableV
                     
                     self.showmylocation.text = place.country!
                     
-                    
-                    
-                    
+      
                 }
             }
             
             
         }
     }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "mcell", for: indexPath)
             
@@ -78,27 +77,40 @@ class MapViewController: UIViewController , CLLocationManagerDelegate , UITableV
         Name.text = filteredData[indexPath.row].Nom
         Location.text = filteredData[indexPath.row].Location
         Phone.text = filteredData[indexPath.row].Numero
-        */
+         */
         
-        if(self.showmylocation.text == "Tunisia" || self.showmylocation.text == "ben arous" || self.showmylocation.text == "manouba")
+ if(self.showmylocation.text == listhospi.MapAll[indexPath.row].city || self.showmylocation.text == "ben arous" || self.showmylocation.text == "manouba")
         {
-            
+  var list = listhospi.MapAll.filter({ $0.city.hasPrefix(self.showmylocation.text!)})
             print( "tunnnniiiiisss")
            // var list = listhospi.Maptunis[indexPath.row]
-            Name.text = listhospi.Maptunis[indexPath.row].Nom
+    Name.text = listhospi.Maptunis[indexPath.row].Nom
             Location.text = listhospi.Maptunis[indexPath.row].Location
             Phone.text = listhospi.Maptunis[indexPath.row].Numero
 
             
         }else{
-            print( "oottthhhheeerrr")
+            Name.text = listhospi.MapAll[indexPath.row].Nom
+                    Location.text = listhospi.MapAll[indexPath.row].Location
+                    Phone.text = listhospi.MapAll[indexPath.row].Numero
+            
         }
-        
-        
+ 
+/*
+        let namesWithL = listhospi.MapAll.filter{ $0.Nom.contains(self.showmylocation.text!) }
+        for student in namesWithL {
+            listhospi.MapAll = [student]
+            //print(student)
+            
+            Name.text = listhospi.MapAll[indexPath.row].Nom
+            Location.text = listhospi.MapAll[indexPath.row].Location
+            Phone.text = listhospi.MapAll[indexPath.row].Numero
+        }
+        self.tableview.reloadData()
         
 
         
-        
+         */
         
         return cell
     }
@@ -107,13 +119,24 @@ class MapViewController: UIViewController , CLLocationManagerDelegate , UITableV
         if searchBar==searchbar {
             if searchText.isEmpty {
                 print("empty search")
+               // listhospi.Maptunis
                 
+                let namesWithL = listhospi.MapAll
+                for student in namesWithL {
+                    tableview.reloadData()
+                    listhospi.MapAll = [student]
+                  print(student)
+                  
+                }
+               
             }else{
                 let namesWithL = listhospi.MapAll.filter{ $0.Nom.contains(searchText) }
                 for student in namesWithL {
+                    listhospi.MapAll = [student]
                   print(student)
+                    tableview.reloadData()
                 }
-                tableview.reloadData()
+              
             }
         }
     }
@@ -170,7 +193,7 @@ class MapViewController: UIViewController , CLLocationManagerDelegate , UITableV
         filteredData = listhospi.MapAll
        // print(listhospi.Maptunis)
         
-       // MapNabeul.append(Information(Nom: <#T##String#>, Location: <#T##String#>, Numero: <#T##String#>, Longitude: <#T##String#>, Latitude: <#T##String#>))
+       // MapNabeul.append(Information(Nom: T##String, Location: <#T##String#>, Numero: <#T##String#>, Longitude: <#T##String#>, Latitude: <#T##String#>))
         // Do any additional setup after loading the view.
         
         

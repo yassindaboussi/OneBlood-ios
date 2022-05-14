@@ -19,6 +19,7 @@ class NeedyViewController: UIViewController  {
     @IBOutlet weak var searchbar: UISearchBar!
     @IBOutlet weak var btnmatchblood: UIButton!
     @IBOutlet weak var ButtonAdd: UIButton!
+    var index = true
     fileprivate let baseURL = "https://server-oneblood.herokuapp.com/"
     var connectedUser:User = User(id: "notyet", name: "", email: "", blood: "", age: 0, weight: "" , adress: "", phone: 0, usertype: "", avatar: "", token: "")
 
@@ -72,6 +73,77 @@ class NeedyViewController: UIViewController  {
         }.resume()
         
 
+    }
+    @IBAction func Clickpost(_ sender: Any)
+    
+    {
+        if (index == true)
+        {
+        guard let url = URL(string: baseURL+"GetAllMyPost") else { return }
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+       var iduser = connectedUser.id
+        request.setValue(  iduser ,forHTTPHeaderField: "postedby")
+ 
+        var status = 0
+        
+       
+    URLSession.shared.dataTask(with: request) { (data,response,error) in
+            if error == nil{
+                do {
+                    self.productList = try JSONDecoder().decode([Needy].self, from: data!)
+                } catch {
+                    print("parse json error")
+                }
+                
+                DispatchQueue.main.async {
+                    self.index = false
+            self.NeedyView.performBatchUpdates(
+                
+                      {
+                        
+                        self.NeedyView.reloadSections(NSIndexSet(index: 0) as IndexSet)
+                      }, completion: { (finished:Bool) -> Void in
+                    })
+                    
+                    //self.filterProducts.reloadData()
+                    //self.Products.reloadData()
+                }
+            }
+        }.resume()
+            
+        }
+        else{
+            let productsUrl = URL(string: baseURL+"GetAllBesoin")
+            URLSession.shared.dataTask(with: productsUrl!) { (data,response,error) in
+                if error == nil{
+                    do {
+                        self.productList = try JSONDecoder().decode([Needy].self, from: data!)
+                    } catch {
+                        print("parse json error")
+                    }
+                    
+                    DispatchQueue.main.async {
+                        
+                        self.index = true
+       
+                        
+                        self.NeedyView.performBatchUpdates(
+                          {
+                            self.NeedyView.reloadSections(NSIndexSet(index: 0) as IndexSet)
+                          }, completion: { (finished:Bool) -> Void in
+                        })
+                        
+                        //self.filterProducts.reloadData()
+                        //self.Products.reloadData()
+                    }
+                }
+            }.resume()
+            
+            
+            
+        }
+        
     }
     func getConnectedUser() {
         
@@ -230,7 +302,7 @@ extension NeedyViewController: UICollectionViewDelegateFlowLayout, UICollectionV
         let Nom = contentView.viewWithTag(4) as! UILabel
         let Hospital = contentView.viewWithTag(5) as! UILabel
         let Phone = contentView.viewWithTag(6) as! UILabel
-        let Blood = contentView.viewWithTag(7) as! UILabel
+        let Blood = contentView.viewWithTag(7) as! UIImageView
         let Btn = contentView.viewWithTag(8) as! UIButton
 
         
@@ -239,8 +311,10 @@ extension NeedyViewController: UICollectionViewDelegateFlowLayout, UICollectionV
         Situation.text = productList[indexPath.row].situation
         Nom.text = productList[indexPath.row].nom
         Hospital.text = productList[indexPath.row].location
+        
         Phone.text = String (productList[indexPath.row].phone)
-        Blood.text = productList[indexPath.row].blood
+        
+        Blood.image = UIImage(named: productList[indexPath.row].blood)
   
        // Btn.addTarget(self, action: Selector("action:"), for: UIControl.Event.touchUpInside)
       
@@ -264,7 +338,11 @@ extension NeedyViewController: UICollectionViewDelegateFlowLayout, UICollectionV
             Situation.textColor = UIColor(red: 0, green:153, blue: 0, alpha: 1.0)
             
         }
-
+        if(Situation.text == "Closed")
+        {
+            Situation.textColor = UIColor.gray
+            
+        }
         if((indexPath.row % 2) != 0)
         {
             cell.contentView.backgroundColor = UIColor(red: 24, green: 24, blue: 56 )
@@ -280,7 +358,20 @@ extension NeedyViewController: UICollectionViewDelegateFlowLayout, UICollectionV
     }
     
     @objc func buttonAction(sender: UIButton!) {
-        performSegue(withIdentifier: "GoPop", sender: Int.self)
+        var superview = sender.superview
+            while let view = superview, !(view is UICollectionViewCell) {
+                superview = view.superview
+            }
+            guard let cell = superview as? UICollectionViewCell else {
+                print("button is not contained in a table view cell")
+                return
+            }
+            guard let indexPath = NeedyView.indexPath(for: cell) else {
+                print("failed to get index path for cell containing button")
+                return
+            }
+        performSegue(withIdentifier: "GoPop", sender: indexPath.row)
+   
         /*
         let indexpath1 = IndexPath(row: sender.tag, section: 0)
         let home = self.storyboard?.instantiateViewController(withIdentifier: "PopOptionsViewController") as! PopOptionsViewController
@@ -302,6 +393,7 @@ extension NeedyViewController: UICollectionViewDelegateFlowLayout, UICollectionV
         destination.name = product.nom
         destination.hospital = product.location
         destination.phone = String (product.phone)
+        destination.Situation = product.situation
         
         
 

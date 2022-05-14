@@ -38,6 +38,7 @@
 		7383DA4E27FF375700C18202 /* lottieGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7383DA4D27FF375700C18202 /* lottieGif.swift */; };
 		7388016F2806C198008024BB /* ProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7388016E2806C198008024BB /* ProfilViewController.swift */; };
 		738801772806FA9D008024BB /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 738801762806FA9D008024BB /* NetworkExtension.framework */; };
+		7B421699282EFC3E0023EC6E /* EditPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B421698282EFC3E0023EC6E /* EditPostViewController.swift */; };
 		7BDD8532282B0DA600AF1A63 /* PopOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD8531282B0DA600AF1A63 /* PopOptionsViewController.swift */; };
 		7BDD853B282B329100AF1A63 /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD853A282B329100AF1A63 /* Information.swift */; };
 		7BDD853F282B33F200AF1A63 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD853E282B33F200AF1A63 /* MapViewController.swift */; };
@@ -90,6 +91,7 @@
 		7388016E2806C198008024BB /* ProfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilViewController.swift; sourceTree = "<group>"; };
 		738801742806FA9D008024BB /* OneBlood.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OneBlood.entitlements; sourceTree = "<group>"; };
 		738801762806FA9D008024BB /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		7B421698282EFC3E0023EC6E /* EditPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostViewController.swift; sourceTree = "<group>"; };
 		7BDD8531282B0DA600AF1A63 /* PopOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOptionsViewController.swift; sourceTree = "<group>"; };
 		7BDD853A282B329100AF1A63 /* Information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Information.swift; sourceTree = "<group>"; };
 		7BDD853E282B33F200AF1A63 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				7BDD8531282B0DA600AF1A63 /* PopOptionsViewController.swift */,
 				7BDD853E282B33F200AF1A63 /* MapViewController.swift */,
 				7BDD8555282B869D00AF1A63 /* PopMapViewController.swift */,
+				7B421698282EFC3E0023EC6E /* EditPostViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				43631D262818486100972C1C /* Forget1ViewController.swift in Sources */,
 				E4BE0A20280EE9EF00668EA6 /* BackendResponse.swift in Sources */,
 				7383DA4E27FF375700C18202 /* lottieGif.swift in Sources */,
+				7B421699282EFC3E0023EC6E /* EditPostViewController.swift in Sources */,
 				7383DA3727FF2D4B00C18202 /* ViewController.swift in Sources */,
 				733A769E28062A5F00EAE5F8 /* Parser.swift in Sources */,
 				7383DA3327FF2D4B00C18202 /* AppDelegate.swift in Sources */,

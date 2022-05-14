@@ -3,8 +3,10 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
-class Signup1ViewController: UIViewController {
+class Signup1ViewController: UIViewController  , CLLocationManagerDelegate {
 
   @IBOutlet weak var NameTxt: UITextField!
   @IBOutlet weak var EmailTxt: UITextField!
@@ -13,10 +15,49 @@ class Signup1ViewController: UIViewController {
   @IBOutlet weak var gifimage: UIImageView!
 
   @IBOutlet weak var PasswordTxt: UITextField!
+    
+    let manger = CLLocationManager()
+    
+   
+    
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations[0]
+        let span:MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.01 , longitudeDelta: 0.01 )
+        let mylocation:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: location.coordinate.latitude,longitude: location.coordinate.longitude )
+        let region:MKCoordinateRegion = MKCoordinateRegion(center: mylocation,span: span)
+        print(location.altitude)
+        
+        CLGeocoder().reverseGeocodeLocation(location){ (MKPlacemark , Error) in
+            if Error != nil
+            {
+                print("there was an error")
+            }
+            else{
+                if let place = MKPlacemark?[0]{
+                    print("+++++++++place+++++")
+                    print( place.country )
+                 
+                    
+                    self.LocationTxt.text = place.country!
+                    
+                    
+                    
+                    
+                }
+            }
+            
+            
+        }
+    }
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
+    
+    manger.delegate = self
+    manger.desiredAccuracy = kCLLocationAccuracyBest
+    manger.requestWhenInUseAuthorization()
+    manger.startUpdatingLocation()
     // Do any additional setup after loading the view.
     let setGif = UIImage.gifImageWithName("userlogin")
     gifimage.image = setGif
@@ -38,6 +79,9 @@ class Signup1ViewController: UIViewController {
       self, action: #selector(Signup1ViewController.textFieldDidChangeLocation(_:)),
       for: UIControl.Event.editingChanged)
 
+    
+    
+    
   }
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "SignUp2" {

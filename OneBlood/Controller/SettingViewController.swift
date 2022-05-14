@@ -10,6 +10,7 @@ import DropDown
 import CoreData
 
 class SettingViewController: UIViewController {
+    let ID_TABBAR = "TabBarViewController"
 
     @IBOutlet weak var txtlocation: UITextField!
     @IBOutlet weak var txtage: UITextField!
@@ -120,7 +121,10 @@ class SettingViewController: UIViewController {
                     
                     if(status == 202)
                     {
+                        
+                        
                        self.updateData(id: self.connectedUser.id)
+
                        //self.saveConnectedUser()
                        // self.getConnectedUser()
                        // self.setupUser()
@@ -164,6 +168,10 @@ class SettingViewController: UIViewController {
             do {
                 try managedContext.save()
                 print("Record Updated!")
+                let tabBarController = self.storyboard?.instantiateViewController(identifier:ID_TABBAR) as! UITabBarController
+                   self.navigationController?.pushViewController(tabBarController, animated:true)
+                self.dismiss(animated:true, completion:nil);
+                self.navigationController?.popViewController(animated:true);
             } catch
             let error as NSError {}
         } catch
