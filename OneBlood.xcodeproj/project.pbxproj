@@ -38,6 +38,7 @@
 		7383DA4E27FF375700C18202 /* lottieGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7383DA4D27FF375700C18202 /* lottieGif.swift */; };
 		7388016F2806C198008024BB /* ProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7388016E2806C198008024BB /* ProfilViewController.swift */; };
 		738801772806FA9D008024BB /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 738801762806FA9D008024BB /* NetworkExtension.framework */; };
+		7B03599428336A0900440CE7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03599328336A0900440CE7 /* DetailViewController.swift */; };
 		7B421699282EFC3E0023EC6E /* EditPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B421698282EFC3E0023EC6E /* EditPostViewController.swift */; };
 		7BDD8532282B0DA600AF1A63 /* PopOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD8531282B0DA600AF1A63 /* PopOptionsViewController.swift */; };
 		7BDD853B282B329100AF1A63 /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD853A282B329100AF1A63 /* Information.swift */; };
@@ -95,6 +96,7 @@
 		7B03598A2833257900440CE7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		7B03598C283325D700440CE7 /* fr-CA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr-CA"; path = "fr-CA.lproj/Main.strings"; sourceTree = "<group>"; };
 		7B03598D283325D700440CE7 /* fr-CA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr-CA"; path = "fr-CA.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		7B03599328336A0900440CE7 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		7B421698282EFC3E0023EC6E /* EditPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostViewController.swift; sourceTree = "<group>"; };
 		7BDD8531282B0DA600AF1A63 /* PopOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOptionsViewController.swift; sourceTree = "<group>"; };
 		7BDD853A282B329100AF1A63 /* Information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Information.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				7BDD853E282B33F200AF1A63 /* MapViewController.swift */,
 				7BDD8555282B869D00AF1A63 /* PopMapViewController.swift */,
 				7B421698282EFC3E0023EC6E /* EditPostViewController.swift */,
+				7B03599328336A0900440CE7 /* DetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				733A76982806219200EAE5F8 /* User.swift in Sources */,
 				7383DA3527FF2D4B00C18202 /* SceneDelegate.swift in Sources */,
 				7BDD8543282B359900AF1A63 /* ListMap.swift in Sources */,
+				7B03599428336A0900440CE7 /* DetailViewController.swift in Sources */,
 				942F7352281C2CA700533388 /* HexColor.swift in Sources */,
 				4388C81728182BF0004C1845 /* SettingViewController.swift in Sources */,
 				73162CC3280030F1002C7B66 /* TabViewController.swift in Sources */,

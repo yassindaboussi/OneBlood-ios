@@ -112,6 +112,7 @@ class SettingViewController: UIViewController {
                         self.connectedUser = try JSONDecoder().decode(User.self, from: data!)
                         print(self.connectedUser)
                         print("serialize user")
+                    
                         
                 } catch {
                     print("parse json error")
@@ -121,7 +122,10 @@ class SettingViewController: UIViewController {
                     
                     if(status == 202)
                     {
-                        
+                        let tabBarController = self.storyboard?.instantiateViewController(identifier:self.ID_TABBAR) as! UITabBarController
+                           self.navigationController?.pushViewController(tabBarController, animated:true)
+                        self.dismiss(animated:true, completion:nil);
+                        self.navigationController?.popViewController(animated:true);
                         
                        self.updateData(id: self.connectedUser.id)
 

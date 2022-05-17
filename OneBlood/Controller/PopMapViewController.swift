@@ -17,6 +17,7 @@ class PopMapViewController: UIViewController ,MKMapViewDelegate {
     var Latitude : String?
     var Longitude : String?
     
+    @IBOutlet weak var view11: UIView!
     let geocoder = CLGeocoder()
 
 
@@ -30,6 +31,7 @@ class PopMapViewController: UIViewController ,MKMapViewDelegate {
         lblName.text = name
         lblLocation.text = Location
         lblPhone.text = Phone
+        self.view11.layer.cornerRadius = 10
         
         // Do any additional setup after loading the view.
     }

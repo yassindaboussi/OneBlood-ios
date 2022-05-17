@@ -23,6 +23,7 @@ class SignUp2ViewController: UIViewController {
     var Phone : String?
     var location : String?
     ///
+    @IBOutlet weak var MyBlood: UILabel!
     ///
     var bloodType="O"
     var bloodGroupResult="";
@@ -60,6 +61,7 @@ class SignUp2ViewController: UIViewController {
             bloodType = "A";
         }
         print("Select ===>>>>> "+bloodType)
+        MyBlood.text = bloodType + bloodSigne
     }
     
     @objc func GetvalueBloodSigne(_ sender: UISegmentedControl) {
@@ -71,6 +73,7 @@ class SignUp2ViewController: UIViewController {
             bloodSigne = "-";
         }
         print("Select ===>>>>> "+bloodSigne)
+        MyBlood.text = bloodType + bloodSigne
     }
     
     
@@ -85,6 +88,7 @@ class SignUp2ViewController: UIViewController {
             BloodGroupSelected.selectedSegmentIndex = UISegmentedControl.noSegment
             BloodSignSelected.selectedSegmentIndex = UISegmentedControl.noSegment
             bloodGroupResult="IDK";
+            MyBlood.text = bloodGroupResult
             
         }
     }
@@ -163,6 +167,7 @@ class SignUp2ViewController: UIViewController {
             }.resume()
 
         }
+    
 
         
         

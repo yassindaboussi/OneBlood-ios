@@ -19,7 +19,7 @@ class Forget2ViewController: UIViewController , UITextFieldDelegate {
     var code :Int?
     var Lastcode :String?
     var Email :String?
-
+    fileprivate let baseURLRender = "https://onebloodios.onrender.com/"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +66,7 @@ class Forget2ViewController: UIViewController , UITextFieldDelegate {
     
 
     @IBAction func resendCode(_ sender: Any) {
-        
+
         
     }
 

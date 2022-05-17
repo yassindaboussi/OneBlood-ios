@@ -13,7 +13,7 @@ class NeedyViewController: UIViewController  , UISearchBarDelegate{
     
 
     
-
+    let refreshControl = UIRefreshControl()
 
     
     @IBOutlet weak var searchbar: UISearchBar!
@@ -79,10 +79,21 @@ class NeedyViewController: UIViewController  , UISearchBarDelegate{
         
         searchbar.delegate = self
 
-
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+           refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        NeedyView.addSubview(refreshControl) // not required when using UITableViewController
     }
     
-    
+
+    @objc func refresh(_ sender: AnyObject) {
+        
+        
+        print("sssssssssss")
+        NeedyView.reloadData()
+
+        self.refreshControl.endRefreshing()
+         
+    }
     
     @IBAction func Clickpost(_ sender: Any)
     
@@ -249,6 +260,7 @@ class NeedyViewController: UIViewController  , UISearchBarDelegate{
         NeedyView.reloadData()
     }
     
+
     
     func getConnectedUser() {
         
@@ -544,6 +556,17 @@ extension NeedyViewController: UICollectionViewDelegateFlowLayout, UICollectionV
             
        // destination. = product
         }
+        if segue.identifier=="Detail" {
+            let indexPath = sender as! IndexPath
+            let product = filteredPatients[indexPath.row]
+            let destination = segue.destination as! DetailViewController
+            destination.name = product.nom
+            destination.Blood = product.blood
+            destination.phone = String(product.phone)
+            destination.hospital = product.location
+            
+            
+        }
 
     }
     
@@ -570,7 +593,11 @@ extension NeedyViewController: UICollectionViewDelegateFlowLayout, UICollectionV
             
             //self.Products.reloadData()
         }
+         
      */
+        if collectionView==NeedyView {
+               performSegue(withIdentifier: "Detail", sender: indexPath)
+           }
         
     }
     

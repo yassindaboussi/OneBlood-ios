@@ -93,6 +93,7 @@ class PopOptionsViewController: UIViewController {
     }
     
     @IBAction func DeletePost(_ sender: Any) {
+        
         let parameters = [ "_id" : Id_post! ] as [String:Any]
      
         guard let url = URL(string: baseURL+"deletPost") else { return }
@@ -117,12 +118,17 @@ class PopOptionsViewController: UIViewController {
 
                         
                     }*/
+                    
+
+                    
                     print("test-------------")
                     let tabBarController = self.storyboard?.instantiateViewController(identifier:ID_TABBAR) as! UITabBarController
                        self.navigationController?.pushViewController(tabBarController, animated:true)
                     self.dismiss(animated:true, completion:nil);
                     self.navigationController?.popViewController(animated:true);
                     print(self.Id_post!)
+                    
+
                 }
             }
         }.resume()

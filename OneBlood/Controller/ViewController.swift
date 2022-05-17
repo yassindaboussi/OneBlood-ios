@@ -12,6 +12,9 @@ import FBSDKLoginKit
 class ViewController: UIViewController{
 
     
+    let ID_TABBAR = "TabBarViewController"
+    @IBOutlet weak var rememberSwitch: UISwitch!
+    
     @IBOutlet weak var facebookLoginBtn: UIButton!
     
     fileprivate let baseURL = "https://server-oneblood.herokuapp.com"
@@ -48,8 +51,79 @@ class ViewController: UIViewController{
 //        loginButton.center = view.center
 //        view.addSubview(loginButton)
         
+        rememberSwitch.addTarget(self, action: #selector(self.stateChanged), for: .valueChanged)
+               let defaults: UserDefaults? = UserDefaults.standard
+
+       // check if defaults already saved the details
+
+        if (((defaults?.bool(forKey: "ISRemember")) != nil)  && defaults?.string(forKey: "SavedEmail") != "" && defaults?.string(forKey: "SavedPassword") != "") {
+            
+            rememberSwitch.setOn(true, animated: false)
+            let tabBarController = self.storyboard?.instantiateViewController(identifier:ID_TABBAR) as! UITabBarController
+            self.navigationController?.pushViewController(tabBarController, animated:true)
+            self.dismiss(animated:true, completion:nil);
+            self.navigationController?.popViewController(animated:true);
+            
+            
+            ////
+            
+            
+            let parameters = ["email" : defaults?.string(forKey: "SavedEmail"), "password" : defaults?.string(forKey: "SavedPassword")]
+            guard let url = URL(string: baseURL+"/signin") else { return }
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else { return }
+            request.httpBody = httpBody
+            var status = 0
+            URLSession.shared.dataTask(with: request) { (data,response,error) in
+                if error == nil{
+                    do {
+                        
+                        let httpResponse = response as? HTTPURLResponse
+                        status = httpResponse!.statusCode
+                        if !( status == 200) {
+
+                            print("serialize backendresponse")
+                            self.response = try JSONDecoder().decode(AuthResponse.self, from: data!)
+                            print(self.response)
+                        }else {
+                            self.connectedUser = try JSONDecoder().decode(User.self, from: data!)
+                            print(self.connectedUser)
+                            print("serialize user")
+                        }
+                        
+                    } catch {
+                        print("parse json error")
+                    }
+            
+                    DispatchQueue.main.async {
+                        
+                      if status == 422 {
+                        print("error=======")
+                            let alert = UIAlertController(title: "Incorrect password", message: "check your inputs", preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+                            self.present(alert, animated: true)
+                        }else if status == 200 {
+                            
+                            print("++++++++++++++++++++++name++++++++++++++++++"+self.connectedUser.name)
+                            print(self.connectedUser)
+                           self.saveConnectedUser()
+                            self.performSegue(withIdentifier: "Home", sender:nil)
+                        }
+                        
+                    }
+                }
+            }.resume()
+            
+            
+            /////
+               }
+               else {
+                   rememberSwitch.setOn(false, animated: false)
+               }
         
-        if isLoggedIn() {
+        if isLoggedIn() { // mte lfacebook
             // Show the ViewController with the logged in user
         }else{
             // Show the Home ViewController
@@ -67,7 +141,18 @@ class ViewController: UIViewController{
         self.navigationItem.backBarButtonItem?.title=""
 
     }
-    
+    @objc func stateChanged(_ switchState: UISwitch) {
+
+            let defaults: UserDefaults? = UserDefaults.standard
+        if switchState.isOn {
+                defaults?.set(true, forKey: "ISRemember")
+            defaults?.set(txtEmail.text, forKey: "SavedEmail")
+            defaults?.set(txtPassword.text, forKey: "SavedPassword")
+            }
+            else {
+                defaults?.set(false, forKey: "ISRemember")
+                }
+                }
     func isLoggedIn() -> Bool {
         let accessToken = AccessToken.current
         let isLoggedIn = accessToken != nil && !(accessToken?.isExpired ?? false)

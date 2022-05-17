@@ -8,15 +8,63 @@
 import UIKit
 import CoreData
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource{
+    
+    
+  
+    @IBOutlet weak var tablepost: UITableView!
+   
+    
     
     @IBOutlet weak var bloodtype: UILabel!
     @IBOutlet weak var usertypetxt: UILabel!
     var connectedUser:User = User(id: "notyet", name: "", email: "", blood: "", age: 0, weight: "" , adress: "", phone: 0, usertype: "", avatar: "", token: "")
-    fileprivate let baseURL = "https://server-oneblood.herokuapp.com"
+    fileprivate let baseURL = "https://server-oneblood.herokuapp.com/"
     @IBOutlet weak var imageProfile: UIImageView!
     @IBOutlet weak var CadreHistorique: UIView!
     @IBOutlet weak var cadreinfoUser: UIView!
+    var filteredPatients : [Needy] = []
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        filteredPatients.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "mcell", for: indexPath)
+          //  cell.layer.cornerRadius = 10
+            let contentView = cell.contentView
+            
+            let Date = contentView.viewWithTag(2) as! UILabel
+            let Situation = contentView.viewWithTag(3) as! UILabel
+
+            let Blood = contentView.viewWithTag(1) as! UIImageView
+            
+
+        cell.contentView.backgroundColor = UIColor(red: 24, green: 24, blue: 56 )
+
+            Date.text = "Date Post : " + filteredPatients[indexPath.row].datepost
+            Situation.text = "Situation : " + filteredPatients[indexPath.row].situation
+        Blood.image = UIImage(named: filteredPatients[indexPath.row].blood)
+        
+        
+        if(Situation.text!.contains( "Danger"))
+        {
+            Situation.textColor = UIColor(red: 255, green: 0, blue: 0, alpha: 1.0)
+            
+        }
+        if(Situation.text!.contains( "Normal"))
+        {
+            Situation.textColor = UIColor(red: 0, green:153, blue: 0, alpha: 1.0)
+            
+        }
+        if(Situation.text!.contains( "Closed"))
+        {
+            Situation.textColor = UIColor.gray
+            
+        }
+        return cell
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         cadreinfoUser.layer.shadowColor = UIColor.black.cgColor
@@ -41,9 +89,44 @@ class HomeViewController: UIViewController {
         imageProfile.clipsToBounds = true
          self.view.addSubview(imageProfile)
         self.view.layoutIfNeeded()
-        ///
+        
         getConnectedUser()
        setupUser()
+        
+        guard let url = URL(string: baseURL+"GetAllMyPost") else { return }
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+       var iduser = connectedUser.id
+        request.setValue(  iduser ,forHTTPHeaderField: "postedby")
+ 
+        var status = 0
+        
+       
+    URLSession.shared.dataTask(with: request) { (data,response,error) in
+            if error == nil{
+                do {
+                    self.filteredPatients = try JSONDecoder().decode([Needy].self, from: data!)
+                } catch {
+                    print("parse json error")
+                }
+                
+                DispatchQueue.main.async {
+                   
+            self.tablepost.performBatchUpdates(
+                
+                      {
+                        
+                        self.tablepost.reloadSections(NSIndexSet(index: 0) as IndexSet, with: .none)
+                      }, completion: { (finished:Bool) -> Void in
+                    })
+                    
+                    //self.filterProducts.reloadData()
+                    //self.Products.reloadData()
+                }
+            }
+        }.resume()
+        ///
+
         
 
     }
@@ -55,6 +138,44 @@ class HomeViewController: UIViewController {
         bloodtype.text = connectedUser.blood
         usertypetxt.text = connectedUser.usertype
         print("yyyyyyyy")
+        
+        
+        
+        
+        
+        
+        guard let url = URL(string: baseURL+"GetAllMyPost") else { return }
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+       var iduser = connectedUser.id
+        request.setValue(  iduser ,forHTTPHeaderField: "postedby")
+ 
+        var status = 0
+        
+       
+    URLSession.shared.dataTask(with: request) { (data,response,error) in
+            if error == nil{
+                do {
+                    self.filteredPatients = try JSONDecoder().decode([Needy].self, from: data!)
+                } catch {
+                    print("parse json error")
+                }
+                
+                DispatchQueue.main.async {
+                   
+            self.tablepost.performBatchUpdates(
+                
+                      {
+                        
+                        self.tablepost.reloadSections(NSIndexSet(index: 0) as IndexSet, with: .none)
+                      }, completion: { (finished:Bool) -> Void in
+                    })
+                    
+                    //self.filterProducts.reloadData()
+                    //self.Products.reloadData()
+                }
+            }
+        }.resume()
     }
     
     override func viewDidDisappear(_ animated: Bool) {

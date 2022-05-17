@@ -34,6 +34,13 @@ class infoViewController: UIViewController {
     }
     
     @IBAction func LogoutAction(_ sender: Any) {
+        
+        let defaults: UserDefaults? = UserDefaults.standard
+         defaults?.set(false, forKey: "ISRemember")
+        defaults?.set("", forKey: "SavedEmail")
+        defaults?.set("", forKey: "SavedPassword")
+        
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
             
         let managedContext = appDelegate.persistentContainer.viewContext

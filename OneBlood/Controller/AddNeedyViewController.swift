@@ -25,11 +25,10 @@ class AddNeedyViewController: UIViewController {
     @IBOutlet weak var TxtHospital: UITextField!
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var LabelBlood: UILabel!
-    var Datepost = "4 may 2022 10:50"
     let dropDown = DropDown()
     let list = ["A+", "A-", "B+","B-","AB+","AB-","O+","O-","IDK"]
     fileprivate let baseURL = "https://server-oneblood.herokuapp.com/"
-    
+    var datenow = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         dropDown.anchorView = ViewBloodType
@@ -46,6 +45,15 @@ class AddNeedyViewController: UIViewController {
             self.LabelBlood.text = list[index]
         }
         getConnectedUser()
+        
+        
+        
+        let date = Date()
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let dateString = df.string(from: date)
+        
+        datenow = dateString
         
     }
     
@@ -99,7 +107,7 @@ class AddNeedyViewController: UIViewController {
     
     @IBAction func ClickSave(_ sender: Any) {
         
-        let parameters = ["datepost" : Datepost ,"nom" : txtName.text! , "avatar" : txtName.text! ,"location" : TxtHospital.text!, "blood" : LabelBlood.text! , "phone" :  txtPhone.text! , "situation": Situation , "postedby" : connectedUser.id] as [String:Any]
+        let parameters = ["datepost" : datenow ,"nom" : txtName.text! , "avatar" : txtName.text! ,"location" : TxtHospital.text!, "blood" : LabelBlood.text! , "phone" :  txtPhone.text! , "situation": Situation , "postedby" : connectedUser.id] as [String:Any]
      
         guard let url = URL(string: baseURL+"Addbesion") else { return }
         var request = URLRequest(url: url)
