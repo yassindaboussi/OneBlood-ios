@@ -173,11 +173,15 @@ class MapViewController: UIViewController , CLLocationManagerDelegate , UITableV
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier=="GoPopMap" {
            let indexPath = sender as! IndexPath
-            let product = listhospi.Maptunis[indexPath.row]
+            let product = listhospi.MapAll[indexPath.row]
                let destination = segue.destination as! PopMapViewController
             destination.name = product.Nom
             destination.Location = product.Location
             destination.Phone = product.Numero
+            destination.Latitude = product.Latitude
+            destination.Longitude = product.Longitude
+            
+       
       
     }
     }

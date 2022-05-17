@@ -423,7 +423,7 @@
                         <viewLayoutGuide key="safeArea" id="CyV-tQ-Gfk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="magnifyingglass" catalog="system" id="Zxp-bs-6sW">
+                    <tabBarItem key="tabBarItem" title="" image="homekit" catalog="system" id="Zxp-bs-6sW">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="Wrf-Eg-RCu"/>
@@ -818,6 +818,9 @@
                                         <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <state key="normal" title="Map"/>
+                                        <connections>
+                                            <action selector="OpenMapClicked:" destination="RZh-VT-RVH" eventType="touchUpInside" id="hWz-SB-zIx"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XI9-fz-x2a">
                                         <rect key="frame" x="136" y="226" width="102" height="21"/>
@@ -1099,13 +1102,6 @@
                                 <color key="textColor" red="0.96583729979999999" green="0.18257057669999999" blue="0.1071463451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OTP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Stu-Tf-zfF">
-                                <rect key="frame" x="143" y="304" width="113" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="58"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="if you didn't recaive code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIF-2C-JSV">
                                 <rect key="frame" x="61" y="506" width="191" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1117,7 +1113,7 @@
                                 <rect key="frame" x="252" y="495" width="105" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="systemRedColor"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Resend"/>
                                 <connections>
                                     <action selector="resendCode:" destination="004-R8-TDu" eventType="touchUpInside" id="oJk-tT-KS9"/>
                                 </connections>
@@ -1141,35 +1137,36 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="khQ-fk-bH0">
-                                <rect key="frame" x="13" y="433" width="58" height="44"/>
+                                <rect key="frame" x="48" y="431" width="58" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N3f-PX-lEV">
-                                <rect key="frame" x="92" y="433" width="58" height="44"/>
+                                <rect key="frame" x="127" y="431" width="58" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xjj-wW-Upp">
-                                <rect key="frame" x="175" y="433" width="58" height="44"/>
+                                <rect key="frame" x="210" y="431" width="58" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ehk-Pm-GFW">
-                                <rect key="frame" x="258" y="433" width="58" height="44"/>
+                                <rect key="frame" x="293" y="431" width="58" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b6c-ft-1hN">
-                                <rect key="frame" x="336" y="433" width="58" height="44"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Stu-Tf-zfF">
+                                <rect key="frame" x="128" y="300" width="143" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="58"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ArU-7D-1wf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1180,7 +1177,6 @@
                         <outlet property="code2" destination="N3f-PX-lEV" id="TUD-R5-S6V"/>
                         <outlet property="code3" destination="Xjj-wW-Upp" id="f9B-8Y-E77"/>
                         <outlet property="code4" destination="Ehk-Pm-GFW" id="NCM-Wf-W2Z"/>
-                        <outlet property="code5" destination="b6c-ft-1hN" id="aEw-1I-5va"/>
                         <segue destination="CJZ-d7-WaR" kind="show" identifier="forget3" id="R7E-Nt-uem"/>
                     </connections>
                 </viewController>
@@ -1360,7 +1356,7 @@
                         <viewLayoutGuide key="safeArea" id="B31-ju-5Rl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="location.fill" catalog="system" id="6t5-qt-5Zb">
+                    <tabBarItem key="tabBarItem" title="" image="map" catalog="system" id="6t5-qt-5Zb">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <connections>
@@ -1582,8 +1578,8 @@
                     <connections>
                         <segue destination="owy-Of-fI4" kind="relationship" relationship="viewControllers" id="j5q-Zu-5hT"/>
                         <segue destination="2Js-HO-BHT" kind="relationship" relationship="viewControllers" id="zxr-Wu-87O"/>
-                        <segue destination="Cov-OD-Jxa" kind="relationship" relationship="viewControllers" id="HBl-H2-rnY"/>
                         <segue destination="4Fa-Vq-ngG" kind="relationship" relationship="viewControllers" id="non-w5-xqx"/>
+                        <segue destination="Cov-OD-Jxa" kind="relationship" relationship="viewControllers" id="tOs-3M-Hwy"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nam-km-AZu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1669,7 +1665,7 @@
                         <viewLayoutGuide key="safeArea" id="Bfb-CA-C7J"/>
                         <color key="backgroundColor" red="0.88235294117647056" green="0.8901960784313725" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="homekit" catalog="system" id="w23-4c-D38">
+                    <tabBarItem key="tabBarItem" title="" image="person.fill" catalog="system" id="w23-4c-D38">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <connections>
@@ -1687,9 +1683,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Hbb-HG-EmV"/>
         <segue reference="KM4-gP-j1B"/>
-        <segue reference="xU5-rL-ele"/>
+        <segue reference="h95-cb-Vis"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="eye.fill" catalog="system" width="128" height="78"/>
@@ -1699,9 +1694,9 @@
         <image name="hospital" width="128" height="128"/>
         <image name="hospitalicon" width="24" height="24"/>
         <image name="icon" width="160" height="152"/>
-        <image name="location.fill" catalog="system" width="128" height="121"/>
         <image name="lottieblood.gif" width="640" height="640"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="map" catalog="system" width="128" height="110"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="phoneicon" width="24" height="24"/>
         <image name="situation_danger" width="128" height="128"/>
         <image name="situation_normal" width="128" height="128"/>

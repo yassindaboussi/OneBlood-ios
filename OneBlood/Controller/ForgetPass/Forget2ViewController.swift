@@ -9,7 +9,6 @@ import UIKit
 
 class Forget2ViewController: UIViewController , UITextFieldDelegate {
 
-    @IBOutlet weak var code5: UITextField!
     @IBOutlet weak var code4: UITextField!
     @IBOutlet weak var code3: UITextField!
     @IBOutlet weak var code2: UITextField!
@@ -28,7 +27,6 @@ class Forget2ViewController: UIViewController , UITextFieldDelegate {
         code2.delegate = self
         code3.delegate = self
         code4.delegate = self
-        code5.delegate = self
         
         
         let preferences = UserDefaults.standard
@@ -37,9 +35,9 @@ class Forget2ViewController: UIViewController , UITextFieldDelegate {
         if preferences.object(forKey: currentLevelKey) == nil {
             //  Doesn't exist
         } else {
-            let currentLevel = preferences.integer(forKey: currentLevelKey)
+            let currentLevel = preferences.string(forKey: currentLevelKey)
             print("rrrrrrrrrrrr " , currentLevel)
-            Lastcode =  "\(currentLevel)"
+            Lastcode =  currentLevel
             print(Email)
         }
 
@@ -63,10 +61,6 @@ class Forget2ViewController: UIViewController , UITextFieldDelegate {
            let currentText = textField.text! + string
            return currentText.count <= maxLen
         }
-        if(textField == code5){
-           let currentText = textField.text! + string
-           return currentText.count <= maxLen
-        }
         return true;
       }
     
@@ -83,16 +77,14 @@ class Forget2ViewController: UIViewController , UITextFieldDelegate {
         var codeee2 : String = ""
         var codeee3 : String = ""
         var codeee4 : String = ""
-        var codeee5 : String = ""
         
          codeee1 = code1.text!
          codeee2 = code2.text!
          codeee3 = code3.text!
          codeee4 = code4.text!
-         codeee5 = code5.text!
         
 
-        codetyped = codeee1 + codeee2 + codeee3 + codeee4 + codeee5
+        codetyped = codeee1 + codeee2 + codeee3 + codeee4 
         print("codetyped" , codetyped + "Lastcode"  , Lastcode)
         
      

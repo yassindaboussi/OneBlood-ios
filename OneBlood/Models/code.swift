@@ -7,6 +7,6 @@
 
 import Foundation
 struct code : Decodable {
-    var code:Int
+    var code:String
   
 }

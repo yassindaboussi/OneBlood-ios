@@ -12,7 +12,7 @@ class Forget1ViewController: UIViewController {
     @IBOutlet weak var emailforget: UITextField!
     @IBOutlet weak var mygif: UIImageView!
     fileprivate let baseURLRender = "https://onebloodios.onrender.com/"
-    public var codecode:code = code( code: 0)
+    public var codecode:code = code( code: "")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,16 +52,16 @@ class Forget1ViewController: UIViewController {
                         print("parse json error")
                     }
                     DispatchQueue.main.async {
-                       if status == 200 {
-                       
-                           print("waaaaaaaaa" , self.codecode )
+                    //   if status == 200 {
+                        print("aaaaaaaaaaaa")
+                        print("waaaaaaaaa" , self.codecode.code )
                            self.performSegue(withIdentifier: "forget2", sender: sender)
                            
                            let pref = UserDefaults.standard
                            let currentLevel = self.codecode.code
                            let currentLevelKey = "currentLevel"
                            pref.set(currentLevel,forKey: currentLevelKey)
-                        }
+                       // }
                     }
                 }
             }.resume()
