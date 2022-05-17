@@ -290,8 +290,7 @@ class NeedyViewController: UIViewController  , UISearchBarDelegate{
             ButtonAdd.isHidden = false
         }
         
-        NeedyView.delegate = self
-        NeedyView.dataSource = self
+ 
         // Do any additional setup after loading the view.
         
         //get products
@@ -338,18 +337,57 @@ class NeedyViewController: UIViewController  , UISearchBarDelegate{
     }
 
     
+    @IBAction func MatchBloodClicked(_ sender: Any) {
+        
+        filteredPatients = []
+
+            for patient in productList {
+
+                
+                if (connectedUser.blood.lowercased() == "a+") {
+                if ((patient.blood).lowercased().contains("a+") || (patient.blood).lowercased().contains("ab+")) {
+                    filteredPatients.append(patient)}}
+                ////////////
+                if (connectedUser.blood.lowercased() == "o+") {
+                if ((patient.blood).lowercased().contains("o+") || (patient.blood).lowercased().contains("a+") || (patient.blood).lowercased().contains("b+") || (patient.blood).lowercased().contains("ab+")) {
+                    filteredPatients.append(patient)}}
+                ///////////
+                if (connectedUser.blood.lowercased() == "b+") {
+                if ((patient.blood).lowercased().contains("b+") || (patient.blood).lowercased().contains("ab+")) {
+                    filteredPatients.append(patient)}}
+                ///////////
+                if (connectedUser.blood.lowercased() == "ab+")
+                {if ((patient.blood).lowercased().contains("ab+")) {
+                    filteredPatients.append(patient)}}
+                ////////////
+                if (connectedUser.blood.lowercased() == "a-") {
+                if ((patient.blood).lowercased().contains("a+") || (patient.blood).lowercased().contains("a-") || (patient.blood).lowercased().contains("ab+") || (patient.blood).lowercased().contains("ab-")) {
+                    filteredPatients.append(patient)}}
+                ////////////
+                if (connectedUser.blood.lowercased() == "b-") {
+                if ((patient.blood).lowercased().contains("b+") || (patient.blood).lowercased().contains("b-") || (patient.blood).lowercased().contains("ab+") || (patient.blood).lowercased().contains("ab-")) {
+                    filteredPatients.append(patient)}}
+                ////////////
+                if (connectedUser.blood.lowercased() == "ab-") {
+                if ((patient.blood).lowercased().contains("ab+") || (patient.blood).lowercased().contains("ab-")) {
+                    filteredPatients.append(patient)}}
+                ////////////
+                if (connectedUser.blood.lowercased() == "o-" || connectedUser.blood.lowercased() == "idk") {
+                if ((patient.blood).lowercased().contains("a+") || (patient.blood).lowercased().contains("a-") ||
+                    (patient.blood).lowercased().contains("b+") || (patient.blood).lowercased().contains("b-") ||
+                    (patient.blood).lowercased().contains("ab+") || (patient.blood).lowercased().contains("ab-") ||
+                    (patient.blood).lowercased().contains("o+") || (patient.blood).lowercased().contains("o-")) {
+                    filteredPatients.append(patient)}
+                
+            }
+            }
+        NeedyView.reloadData()
+        
+    }
     
     }
 
-func updateSearchResults(for searchController: UISearchController) {
-    
-}
 
-func filtrenow(searchText : String , scopeButton :String = "All")
-{
-  // filtredshapes = shapes
-    
-}
 
 
     
@@ -539,8 +577,7 @@ extension NeedyViewController: UICollectionViewDelegateFlowLayout, UICollectionV
     //searhBar config
 
   
-
+}
     
     
-    }
-
+    
