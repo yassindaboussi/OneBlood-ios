@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class NeedyViewController: UIViewController  {
+class NeedyViewController: UIViewController  , UISearchBarDelegate{
 
     
 
@@ -20,6 +20,8 @@ class NeedyViewController: UIViewController  {
     @IBOutlet weak var btnmatchblood: UIButton!
     @IBOutlet weak var ButtonAdd: UIButton!
     var index = true
+    var test = true
+
     fileprivate let baseURL = "https://server-oneblood.herokuapp.com/"
     var connectedUser:User = User(id: "notyet", name: "", email: "", blood: "", age: 0, weight: "" , adress: "", phone: 0, usertype: "", avatar: "", token: "")
 
@@ -35,6 +37,7 @@ class NeedyViewController: UIViewController  {
     }()
     
     var productList = [Needy]()
+    var filteredPatients : [Needy] = []
 
 
     override func viewDidLoad() {
@@ -72,8 +75,15 @@ class NeedyViewController: UIViewController  {
             }
         }.resume()
         
+        //////
+        
+        searchbar.delegate = self
+
 
     }
+    
+    
+    
     @IBAction func Clickpost(_ sender: Any)
     
     {
@@ -91,7 +101,7 @@ class NeedyViewController: UIViewController  {
     URLSession.shared.dataTask(with: request) { (data,response,error) in
             if error == nil{
                 do {
-                    self.productList = try JSONDecoder().decode([Needy].self, from: data!)
+                    self.filteredPatients = try JSONDecoder().decode([Needy].self, from: data!)
                 } catch {
                     print("parse json error")
                 }
@@ -118,7 +128,7 @@ class NeedyViewController: UIViewController  {
             URLSession.shared.dataTask(with: productsUrl!) { (data,response,error) in
                 if error == nil{
                     do {
-                        self.productList = try JSONDecoder().decode([Needy].self, from: data!)
+                        self.filteredPatients = try JSONDecoder().decode([Needy].self, from: data!)
                     } catch {
                         print("parse json error")
                     }
@@ -145,6 +155,101 @@ class NeedyViewController: UIViewController  {
         }
         
     }
+    
+    
+    
+    @IBAction func SituationClicked(_ sender: Any) {
+        if (test == true)
+        {
+        guard let url = URL(string: baseURL+"ShowSituation") else { return }
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+       var situation = "Danger"
+        request.setValue(  situation ,forHTTPHeaderField: "situation")
+ 
+        var status = 0
+        
+       
+    URLSession.shared.dataTask(with: request) { (data,response,error) in
+            if error == nil{
+                do {
+                    self.filteredPatients = try JSONDecoder().decode([Needy].self, from: data!)
+                } catch {
+                    print("parse json error")
+                }
+                
+                DispatchQueue.main.async {
+                    self.test = false
+            self.NeedyView.performBatchUpdates(
+                
+                      {
+                        
+                        self.NeedyView.reloadSections(NSIndexSet(index: 0) as IndexSet)
+                      }, completion: { (finished:Bool) -> Void in
+                    })
+                    
+                    //self.filterProducts.reloadData()
+                    //self.Products.reloadData()
+                }
+            }
+        }.resume()
+            
+        }
+        else{
+            guard let url = URL(string: baseURL+"ShowSituation") else { return }
+            var request = URLRequest(url: url)
+            request.httpMethod = "GET"
+           var situation = "Normal"
+            request.setValue(  situation ,forHTTPHeaderField: "situation")
+     
+            var status = 0
+            
+           
+        URLSession.shared.dataTask(with: request) { (data,response,error) in
+                if error == nil{
+                    do {
+                        self.filteredPatients = try JSONDecoder().decode([Needy].self, from: data!)
+                    } catch {
+                        print("parse json error")
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.test = true
+                self.NeedyView.performBatchUpdates(
+                    
+                          {
+                            
+                            self.NeedyView.reloadSections(NSIndexSet(index: 0) as IndexSet)
+                          }, completion: { (finished:Bool) -> Void in
+                        })
+                        
+                        //self.filterProducts.reloadData()
+                        //self.Products.reloadData()
+                    }
+                }
+            }.resume()
+             
+            
+            
+        }
+    
+        
+    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredPatients = []
+        if searchText == "" {
+            filteredPatients = productList
+        }else{
+            for patient in productList {
+                if ( (patient.nom).lowercased().contains(searchText.lowercased() ) || ( (patient.location).lowercased().contains(searchText.lowercased()) )){
+                    filteredPatients.append(patient)
+                }
+            }
+        }
+        NeedyView.reloadData()
+    }
+    
+    
     func getConnectedUser() {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -194,7 +299,7 @@ class NeedyViewController: UIViewController  {
         URLSession.shared.dataTask(with: productsUrl!) { (data,response,error) in
             if error == nil{
                 do {
-                    self.productList = try JSONDecoder().decode([Needy].self, from: data!)
+                    self.filteredPatients = try JSONDecoder().decode([Needy].self, from: data!)
                 } catch {
                     print("parse json error")
                 }
@@ -250,7 +355,7 @@ func filtrenow(searchText : String , scopeButton :String = "All")
     
 extension NeedyViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return productList.count
+        return filteredPatients.count
     }
     
     
@@ -307,20 +412,20 @@ extension NeedyViewController: UICollectionViewDelegateFlowLayout, UICollectionV
 
         
 
-        Date.text = productList[indexPath.row].datepost
-        Situation.text = productList[indexPath.row].situation
-        Nom.text = productList[indexPath.row].nom
-        Hospital.text = productList[indexPath.row].location
+        Date.text = filteredPatients[indexPath.row].datepost
+        Situation.text = filteredPatients[indexPath.row].situation
+        Nom.text = filteredPatients[indexPath.row].nom
+        Hospital.text = filteredPatients[indexPath.row].location
         
-        Phone.text = String (productList[indexPath.row].phone)
+        Phone.text = String (filteredPatients[indexPath.row].phone)
         
-        Blood.image = UIImage(named: productList[indexPath.row].blood)
+        Blood.image = UIImage(named: filteredPatients[indexPath.row].blood)
   
        // Btn.addTarget(self, action: Selector("action:"), for: UIControl.Event.touchUpInside)
       
         
         
-        if(productList[indexPath.row].postedby == connectedUser.id)
+        if(filteredPatients[indexPath.row].postedby == connectedUser.id)
         {
             Btn.isHidden = false
         }
@@ -386,7 +491,7 @@ extension NeedyViewController: UICollectionViewDelegateFlowLayout, UICollectionV
     {
      if segue.identifier=="GoPop" {
         let indexPath = sender as! Int
-            let product = productList[indexPath]
+            let product = filteredPatients[indexPath]
             let destination = segue.destination as! PopOptionsViewController
         destination.Id_post = product._id
         destination.Blood = product.blood
@@ -431,7 +536,8 @@ extension NeedyViewController: UICollectionViewDelegateFlowLayout, UICollectionV
         
     }
     
-    
+    //searhBar config
+
   
 
     

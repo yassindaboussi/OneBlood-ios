@@ -72,14 +72,19 @@ class PopOptionsViewController: UIViewController {
                 } catch {
                     print("parse json error")
                 }*/
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [self] in
                  /*  if status == 200 {
                    self.performSegue(withIdentifier: "Login", sender: sender)/
 
                         
                     }*/
+                    
                     print("test-------------")
                     print(self.Id_post!)
+                    let tabBarController = self.storyboard?.instantiateViewController(identifier:ID_TABBAR) as! UITabBarController
+                       self.navigationController?.pushViewController(tabBarController, animated:true)
+                    self.dismiss(animated:true, completion:nil);
+                    self.navigationController?.popViewController(animated:true);
                 }
             }
         }.resume()
@@ -106,13 +111,17 @@ class PopOptionsViewController: UIViewController {
                 } catch {
                     print("parse json error")
                 }*/
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [self] in
                  /*  if status == 200 {
                    self.performSegue(withIdentifier: "Login", sender: sender)/
 
                         
                     }*/
                     print("test-------------")
+                    let tabBarController = self.storyboard?.instantiateViewController(identifier:ID_TABBAR) as! UITabBarController
+                       self.navigationController?.pushViewController(tabBarController, animated:true)
+                    self.dismiss(animated:true, completion:nil);
+                    self.navigationController?.popViewController(animated:true);
                     print(self.Id_post!)
                 }
             }

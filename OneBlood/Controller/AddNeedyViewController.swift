@@ -123,6 +123,10 @@ class AddNeedyViewController: UIViewController {
 
                         
                     }*/
+                    let tabBarController = self.storyboard?.instantiateViewController(identifier:"TabBarViewController") as! UITabBarController
+                       self.navigationController?.pushViewController(tabBarController, animated:true)
+                    self.dismiss(animated:true, completion:nil);
+                    self.navigationController?.popViewController(animated:true);
                     print("test-------------")
                 }
             }

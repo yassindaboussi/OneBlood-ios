@@ -311,6 +311,9 @@
                                 <state key="normal" title="Situation">
                                     <color key="titleColor" red="0.94117647059999998" green="0.94901960780000005" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="SituationClicked:" destination="owy-Of-fI4" eventType="touchUpInside" id="QTH-sM-IJT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3U-y8-rLU">
                                 <rect key="frame" x="35" y="127" width="80" height="48"/>
@@ -1683,6 +1686,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="Hbb-HG-EmV"/>
         <segue reference="KM4-gP-j1B"/>
         <segue reference="h95-cb-Vis"/>
     </inferredMetricsTieBreakers>
